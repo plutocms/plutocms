@@ -6,21 +6,66 @@
 
 @source "../../../content/**/*";
 
+/*
+ * The Pluto palette. The names come from Pluto itself:
+ * - tholin: the red-orange of the tholins on Pluto's surface. The action color.
+ * - haze:   the blue of Pluto's layered atmosphere, seen against the Sun.
+ * - heart:  the tan of the planet and the cream of its heart (Tombaugh Regio).
+ * - kuiper: the cool, deep neutral of the Kuiper belt. Text, borders, dark mode.
+ * Light mode uses primary 600 (4.5:1 on white). Dark mode uses primary 400.
+ */
 @theme static {
   --container-8xl: 90rem;
   --font-sans: 'Public Sans', sans-serif;
+  --font-display: 'Fredoka', 'Public Sans', sans-serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  --color-tholin-50: #FFF5EF;
+  --color-tholin-100: #FFE7D9;
+  --color-tholin-200: #FFCBB0;
+  --color-tholin-300: #FFA47C;
+  --color-tholin-400: #FB7E4F;
+  --color-tholin-500: #EF5F30;
+  --color-tholin-600: #D2461C;
+  --color-tholin-700: #AE3616;
+  --color-tholin-800: #8C2E18;
+  --color-tholin-900: #722817;
+  --color-tholin-950: #3E110A;
+
+  --color-haze-50: #EFF8FF;
+  --color-haze-100: #DBEFFF;
+  --color-haze-200: #BFE3FF;
+  --color-haze-300: #8FD1FF;
+  --color-haze-400: #5BB6F9;
+  --color-haze-500: #3399EE;
+  --color-haze-600: #1E7BD3;
+  --color-haze-700: #1964AD;
+  --color-haze-800: #1A548C;
+  --color-haze-900: #1B4773;
+  --color-haze-950: #132D4C;
+
+  --color-heart-50: #FFFAF3;
+  --color-heart-100: #FFF2E1;
+  --color-heart-200: #FFE6C9;
+  --color-heart-300: #F2D4AF;
+  --color-heart-400: #E3C49F;
+  --color-heart-500: #D2A672;
+  --color-heart-600: #B9874F;
+  --color-heart-700: #996A3C;
+  --color-heart-800: #7C5634;
+  --color-heart-900: #66472D;
+  --color-heart-950: #372416;
+
+  --color-kuiper-50: #F7F8FB;
+  --color-kuiper-100: #EEF0F6;
+  --color-kuiper-200: #DDE1EC;
+  --color-kuiper-300: #C2C8D9;
+  --color-kuiper-400: #9199B3;
+  --color-kuiper-500: #6B7392;
+  --color-kuiper-600: #525A77;
+  --color-kuiper-700: #3E4562;
+  --color-kuiper-800: #292F49;
+  --color-kuiper-900: #191E33;
+  --color-kuiper-950: #0C0F1F;
 }
 
 :root {
@@ -28,6 +73,9 @@
 }
 
 /*
+ * The rules below are for the public pages only. The admin keeps its own
+ * theme (`data-pluto-admin`).
+ *
  * The public pages keep the 4rem header of the Nuxt UI Docs template. Pluto
  * sets `--ui-header-height: 2.5rem` for the admin. The admin bar keeps its own
  * height in `--pluto-admin-bar-height` (2.5rem). The nuxt-content layer adds the
@@ -35,4 +83,29 @@
  */
 :root:not([data-pluto-admin]) {
   --ui-header-height: 4rem;
+  --ui-primary: var(--ui-color-primary-600);
+  --ui-secondary: var(--ui-color-secondary-700);
+}
+
+/* Dark mode is deep space: kuiper 950, not the Nuxt UI 900. */
+:root:not([data-pluto-admin]).dark {
+  --ui-primary: var(--ui-color-primary-400);
+  --ui-secondary: var(--ui-color-secondary-400);
+  --ui-bg: var(--ui-color-neutral-950);
+  --ui-bg-muted: var(--ui-color-neutral-900);
+  --ui-bg-elevated: var(--ui-color-neutral-900);
+  --ui-bg-accented: var(--ui-color-neutral-800);
+  --ui-border: var(--ui-color-neutral-800);
+  --ui-border-muted: var(--ui-color-neutral-900);
+}
+
+:root:not([data-pluto-admin]) ::selection {
+  background-color: var(--color-heart-200);
+  color: var(--color-kuiper-950);
+}
+
+/* Titles use the rounded face of the wordmark. */
+:root:not([data-pluto-admin]) :is(h1, h2) {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }

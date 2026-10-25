@@ -119,6 +119,8 @@ const links = computed(() => {
                 :title="toc.bottom.title"
                 :links="links"
               />
+
+              <PlutoFact :seed="page.path" />
             </div>
           </template>
         </UContentToc>

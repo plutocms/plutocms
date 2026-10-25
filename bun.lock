@@ -13,7 +13,7 @@
         "@nuxt/ui": "^4.12.0",
         "@nuxtjs/mdc": "^0.23.2",
         "@plutocms/nuxt-content": "^0.2.0",
-        "@plutocms/pluto": "^0.20.0",
+        "@plutocms/pluto": "^0.20.1",
         "@takumi-rs/core": "^2.16.3",
         "@vueuse/core": "^14.4.0",
         "nuxt": "^4.6.2",
@@ -427,7 +427,7 @@
 
     "@plutocms/nuxt-content": ["@plutocms/nuxt-content@0.2.0", "", { "dependencies": { "@nuxt/content": "^3.16.2", "@plutocms/pluto": "^0.20.0" }, "hasInstallScript": true }, "sha512-/S4w9HLQvdIFZWNFG2nXWxgvCZVDnqWhewdIzBzoE/qNmBaROzxpf1hsz3Ip9v2IyhxFTXtE6yg5yW/AZzhLBw=="],
 
-    "@plutocms/pluto": ["@plutocms/pluto@0.20.0", "", { "dependencies": { "@iconify-json/lucide": "^1.2.144", "@iconify-json/simple-icons": "^1.2.100", "@internationalized/date": "^3.12.4", "@nuxt/eslint": "^1.17.0", "@nuxt/ui": "^4.12.0", "@plutocms/utils": "^0.2.1", "@tanstack/charts": "^1.1.0", "@vueuse/nuxt": "^14.4.0", "marked": "^17.0.3", "reka-ui": "^2.11.0", "tailwind-merge": "^3.7.0", "ultrahtml": "^1.7.0", "yaml": "^2.9.1" }, "hasInstallScript": true }, "sha512-2+wNWJTWo3r8cQp5+oQ7G2dBm6auz8NRGUHXFnvychlYVVJgpXQudApDEJOcqW5pDA64rgfo6Ml8ovd+kF3wmw=="],
+    "@plutocms/pluto": ["@plutocms/pluto@0.20.1", "", { "dependencies": { "@iconify-json/lucide": "^1.2.144", "@iconify-json/simple-icons": "^1.2.100", "@internationalized/date": "^3.12.4", "@nuxt/eslint": "^1.17.0", "@nuxt/ui": "^4.12.0", "@plutocms/utils": "^0.2.1", "@tanstack/charts": "^1.1.0", "@vueuse/nuxt": "^14.4.0", "marked": "^17.0.3", "reka-ui": "^2.11.0", "tailwind-merge": "^3.7.0", "ultrahtml": "^1.7.0", "yaml": "^2.9.1" }, "hasInstallScript": true }, "sha512-X3gpQYJRmdvAvHT0MPPLXcEiqEYi/VR7NbkulJzC96EOFpzY+8ojori8WT5TynDkm0Clh10mjnj80XTMszHnUQ=="],
 
     "@plutocms/utils": ["@plutocms/utils@0.2.2", "", { "dependencies": { "@nuxt/eslint": "^1.17.0" }, "hasInstallScript": true }, "sha512-Kpg7RkKy1OjP4jMe4czQ0LuxazuWATj70cvE5zVCeb4IXQRCpAmEXf/uI3n2+D7PP5mTC+A5H6mxqtXB21MZ8w=="],
 

@@ -16,7 +16,9 @@ export default withNuxt(
       }
     },
     rules: {
-      'better-tailwindcss/no-unknown-classes': ['error', { ignore: ['^stars$', '^star-layer$', '^star$', '^pluto-header-offset$'] }]
+      'better-tailwindcss/no-unknown-classes': ['error', { ignore: ['^stars$', '^star-layer$', '^star$', '^pluto-header-offset$',
+        // Scoped CSS classes of the landing and the 404 page.
+        '^hero-sky$', '^pluto-orbit$', '^orbit-ring$', '^orbit-chip$', '^charon$', '^planet$', '^lost$'] }]
     }
   }
 )

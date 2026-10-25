@@ -5,11 +5,25 @@ const { footer } = useAppConfig()
 <template>
   <UFooter>
     <template #left>
-      {{ footer.credits }}
+      <div class="flex items-center gap-2">
+        <PlutoLogo
+          mark
+          class="size-5"
+        />
+        {{ footer.credits }}
+      </div>
     </template>
 
+    <p class="text-sm text-dimmed">
+      {{ footer.tagline }}
+    </p>
+
     <template #right>
-      <UColorModeButton v-if="footer?.colorMode" />
+      <UColorModeButton
+        v-if="footer?.colorMode"
+        color="neutral"
+        variant="ghost"
+      />
 
       <template v-if="footer?.links">
         <UButton

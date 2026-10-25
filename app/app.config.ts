@@ -1,8 +1,9 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'green',
-      neutral: 'slate'
+      primary: 'tholin',
+      secondary: 'haze',
+      neutral: 'kuiper'
     },
     // The Pluto layer sets the default size of buttons, inputs and form fields
     // to xl for the admin. The docs template needs the Nuxt UI default (md).
@@ -35,11 +36,6 @@ export default defineAppConfig({
   header: {
     title: 'Pluto',
     to: '/',
-    logo: {
-      alt: '',
-      light: '',
-      dark: ''
-    },
     search: true,
     colorMode: true,
     links: [{
@@ -51,6 +47,7 @@ export default defineAppConfig({
   },
   footer: {
     credits: `Pluto • MIT • © ${new Date().getFullYear()}`,
+    tagline: 'Made at the edge of the solar system.',
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-github',

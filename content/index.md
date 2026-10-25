@@ -1,21 +1,18 @@
 ---
 seo:
-  title: Pluto, the layerable CMS
+  title: Pluto, a small CMS with a big heart
   description: Pluto is a CMS for Nuxt. You build it from layers. Use it with no database, or with Supabase.
 ---
 
-::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
----
-orientation: horizontal
----
-#top
-:hero-background
+::pluto-hero
+#headline
+Small core. Big heart.
 
 #title
-The [layerable CMS]{.text-primary}.
+A small CMS with a [big heart]{.text-primary}.
 
 #description
-Pluto is a CMS powered by [Nuxt](https://nuxt.com). You build it from layers. You install only the layers that you need. Run it with no database by default, but pick one when needed.
+Pluto is a CMS for [Nuxt](https://nuxt.com), made of layers. Start with a small core: free, and with no database. Add a layer when your site needs one.
 
 #links
   :::u-button
@@ -53,7 +50,52 @@ Pluto is a CMS powered by [Nuxt](https://nuxt.com). You build it from layers. Yo
   :::
 ::
 
-::u-page-section{class="dark:bg-neutral-950"}
+::u-page-section
+#headline
+Why the name?
+
+#title
+Pluto is small. People love it anyway.
+
+#description
+In 2006, Pluto lost its title of planet. It is smaller than our Moon. Then, in 2015, the New Horizons probe flew past it, and Pluto was not simple at all.
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-heart
+  ---
+  #title
+  It has a heart
+
+  #description
+  Pluto has a big, pale plain in the shape of a heart: Tombaugh Regio. The heart is in our logo. Pluto is free and open source, and we want it to be friendly.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-layers
+  ---
+  #title
+  It is made of layers
+
+  #description
+  New Horizons saw more than 20 layers of haze in the air of Pluto. The CMS is layers too: a small core, and one layer for each job.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-orbit
+  ---
+  #title
+  Small is a feature
+
+  #description
+  A dwarf planet is still a world. The core is small, and you add only what you need. Your site stays light.
+  :::
+::
+
+::u-page-section
 #title
 Everything a CMS needs, as layers
 
@@ -128,7 +170,7 @@ Each layer does one job. A layer plugs into the admin with one function. You add
   :::
 ::
 
-::u-page-section{class="dark:bg-neutral-950"}
+::u-page-section
 #title
 Two modes
 
@@ -155,7 +197,7 @@ Pick the mode that fits your project.
   :::
 ::
 
-::u-page-section{class="dark:bg-gradient-to-b from-neutral-950 to-neutral-900"}
+::u-page-section
   :::u-page-c-t-a
   ---
   links:
@@ -167,9 +209,8 @@ Pick the mode that fits your project.
       target: _blank
       variant: subtle
       icon: i-simple-icons-github
-  title: Ready to build with layers?
+  title: Ready to start small?
   description: Create a project in one command. Read the guides when you want to add your own layer.
-  class: dark:bg-neutral-950
   ---
 
   :stars-bg

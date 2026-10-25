@@ -18,17 +18,7 @@ const { header } = useAppConfig()
     />
 
     <template #title>
-      <UColorModeImage
-        v-if="header?.logo?.dark || header?.logo?.light"
-        :light="header?.logo?.light!"
-        :dark="header?.logo?.dark!"
-        :alt="header?.logo?.alt"
-        class="h-6 w-auto shrink-0"
-      />
-
-      <span v-else-if="header?.title">
-        {{ header.title }}
-      </span>
+      <PlutoLogo class="h-7 w-auto shrink-0 text-highlighted" />
     </template>
 
     <template #right>
@@ -37,7 +27,11 @@ const { header } = useAppConfig()
         class="lg:hidden"
       />
 
-      <UColorModeButton v-if="header?.colorMode" />
+      <UColorModeButton
+        v-if="header?.colorMode"
+        color="neutral"
+        variant="ghost"
+      />
 
       <template v-if="header?.links">
         <UButton

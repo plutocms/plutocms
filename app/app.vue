@@ -11,7 +11,10 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    // The Pluto icons come from the Pluto layer (pluto/public/img).
+    { rel: 'icon', href: '/img/pluto-icon.svg', type: 'image/svg+xml' },
+    { rel: 'icon', href: '/img/pluto-icon.png', type: 'image/png', sizes: '96x96' },
+    { rel: 'apple-touch-icon', href: '/img/pluto-icon.png' }
   ],
   htmlAttrs: {
     lang: 'en'
