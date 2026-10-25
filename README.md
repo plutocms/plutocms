@@ -1,6 +1,6 @@
-# Pluto CMS documentation
+# Pluto documentation
 
-The documentation site of [Pluto CMS](https://github.com/plutocms/pluto). It uses
+The documentation site of [Pluto](https://github.com/plutocms/pluto). It uses
 [Nuxt UI](https://ui.nuxt.com) and [Nuxt Content](https://content.nuxt.com).
 
 ## Setup
@@ -32,6 +32,13 @@ reads and writes the local `content/` folder, and you are signed in as a local u
 production, it uses the GitHub repository. Copy `.env.example` to `.env` and fill the secrets of
 the GitHub App.
 
-In development, the site uses the local checkouts `../nuxt-content` and `../pluto` when they
-exist next to it. `PLUTO_USE_LOCAL=false` uses the npm packages instead. `PLUTO_NUXT_CONTENT_PATH`
-and `PLUTO_PLUTO_PATH` point at other folders. A production build uses the npm packages.
+Pluto finds the GitHub repository from `PLUTO_CMS_REPO`, from Vercel, or (in development) from
+the `origin` remote of the git repository. Set `PLUTO_CMS_REPO` only for a build elsewhere.
+
+## Local layers (Pluto development)
+
+By default, the site uses the npm packages. To work on Pluto, set `PLUTO_LOCAL_ROOT=..` in
+`.env`. The `plutoLayer` helper in `nuxt.config.ts` then uses the local checkouts next to the
+site (`../nuxt-content`, `../pluto`, `../utils`, and so on). `PLUTO_USE_LOCAL=false` turns it
+off. `PLUTO_<NAME>_PATH` (for example `PLUTO_PLUTO_PATH`) points one layer at another folder. A
+production build on Vercel has no `.env`, so it uses the npm packages.

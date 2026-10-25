@@ -12,7 +12,8 @@
         "@nuxt/image": "^2.1.0",
         "@nuxt/ui": "^4.12.0",
         "@nuxtjs/mdc": "^0.23.2",
-        "@plutocms/nuxt-content": "^0.1.0",
+        "@plutocms/nuxt-content": "^0.2.0",
+        "@plutocms/pluto": "^0.20.0",
         "@takumi-rs/core": "^2.16.3",
         "@vueuse/core": "^14.4.0",
         "nuxt": "^4.6.2",
@@ -424,9 +425,9 @@
 
     "@pkgr/core": ["@pkgr/core@0.3.6", "", {}, "sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA=="],
 
-    "@plutocms/nuxt-content": ["@plutocms/nuxt-content@0.1.0", "", { "dependencies": { "@nuxt/content": "^3.16.2", "@plutocms/pluto": "^0.19.0" }, "hasInstallScript": true }, "sha512-AiulwjMqu2nHvd3X/kdHN1/KdkVAOirpQ+ZOhAou+Ip6hQc/5vdQfCHSd81FRsuc/qd45oq0mOar4drKSX3JoQ=="],
+    "@plutocms/nuxt-content": ["@plutocms/nuxt-content@0.2.0", "", { "dependencies": { "@nuxt/content": "^3.16.2", "@plutocms/pluto": "^0.20.0" }, "hasInstallScript": true }, "sha512-/S4w9HLQvdIFZWNFG2nXWxgvCZVDnqWhewdIzBzoE/qNmBaROzxpf1hsz3Ip9v2IyhxFTXtE6yg5yW/AZzhLBw=="],
 
-    "@plutocms/pluto": ["@plutocms/pluto@0.19.0", "", { "dependencies": { "@iconify-json/lucide": "^1.2.144", "@iconify-json/simple-icons": "^1.2.100", "@internationalized/date": "^3.12.4", "@nuxt/eslint": "^1.17.0", "@nuxt/ui": "^4.12.0", "@plutocms/utils": "^0.2.1", "@tanstack/charts": "^1.1.0", "@vueuse/nuxt": "^14.4.0", "marked": "^17.0.3", "reka-ui": "^2.11.0", "tailwind-merge": "^3.7.0", "ultrahtml": "^1.7.0", "yaml": "^2.9.1" }, "hasInstallScript": true }, "sha512-eOz4Adn2966qMiZPO6k47HMGii3O7Y4WC8EZUjjCXQ34FOkEFCHdho8Pem3WokylHeaOnOaQ1C2ZfqgUSngo5g=="],
+    "@plutocms/pluto": ["@plutocms/pluto@0.20.0", "", { "dependencies": { "@iconify-json/lucide": "^1.2.144", "@iconify-json/simple-icons": "^1.2.100", "@internationalized/date": "^3.12.4", "@nuxt/eslint": "^1.17.0", "@nuxt/ui": "^4.12.0", "@plutocms/utils": "^0.2.1", "@tanstack/charts": "^1.1.0", "@vueuse/nuxt": "^14.4.0", "marked": "^17.0.3", "reka-ui": "^2.11.0", "tailwind-merge": "^3.7.0", "ultrahtml": "^1.7.0", "yaml": "^2.9.1" }, "hasInstallScript": true }, "sha512-2+wNWJTWo3r8cQp5+oQ7G2dBm6auz8NRGUHXFnvychlYVVJgpXQudApDEJOcqW5pDA64rgfo6Ml8ovd+kF3wmw=="],
 
     "@plutocms/utils": ["@plutocms/utils@0.2.2", "", { "dependencies": { "@nuxt/eslint": "^1.17.0" }, "hasInstallScript": true }, "sha512-Kpg7RkKy1OjP4jMe4czQ0LuxazuWATj70cvE5zVCeb4IXQRCpAmEXf/uI3n2+D7PP5mTC+A5H6mxqtXB21MZ8w=="],
 
