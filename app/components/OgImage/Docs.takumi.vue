@@ -1,6 +1,10 @@
 <script setup lang="ts">
 // The OG image renderer does not know the site theme, so the colors are the
 // hex values of the Pluto palette (app/assets/css/main.css).
+//
+// WhatsApp crops the 1200x600 image to 498:341 (about 1.46:1) from the center,
+// so it cuts 162px on each side. The content keeps 200px on the left and on
+// the right, so it stays inside the crop with a margin.
 defineOptions({
   inheritAttrs: false
 })
@@ -18,11 +22,11 @@ defineProps<{
     :style="{ backgroundColor: '#0C0F1F', backgroundImage: 'radial-gradient(circle at 90% 0%, #1B4773 0%, #0C0F1F 55%)' }"
   >
     <div
-      class="absolute top-0 left-0 w-2 h-full"
+      class="absolute top-0 left-0 w-full h-2"
       :style="{ backgroundColor: '#FB7E4F' }"
     />
 
-    <div class="flex flex-col justify-between flex-1 px-20 py-16">
+    <div class="flex flex-col justify-between flex-1 px-[200px] py-16">
       <div />
 
       <div class="flex flex-col gap-5">
@@ -36,8 +40,8 @@ defineProps<{
 
         <h1
           v-if="title"
-          class="text-6xl font-bold"
-          :style="{ color: '#FFFFFF' }"
+          class="text-6xl/tight font-bold"
+          :style="{ color: '#FFFFFF', lineClamp: 2, textOverflow: 'ellipsis' }"
         >
           {{ title }}
         </h1>
