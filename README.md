@@ -32,8 +32,6 @@ reads and writes the local `content/` folder, and you are signed in as a local u
 production, it uses the GitHub repository. Copy `.env.example` to `.env` and fill the secrets of
 the GitHub App.
 
-Until the layer and Pluto 0.19 are on npm, run the site with local checkouts:
-
-```bash
-PLUTO_PLUTO_PATH=../pluto PLUTO_NUXT_CONTENT_PATH=../nuxt-content bun run dev
-```
+In development, the site uses the local checkouts `../nuxt-content` and `../pluto` when they
+exist next to it. `PLUTO_USE_LOCAL=false` uses the npm packages instead. `PLUTO_NUXT_CONTENT_PATH`
+and `PLUTO_PLUTO_PATH` point at other folders. A production build uses the npm packages.

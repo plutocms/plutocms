@@ -1,6 +1,27 @@
-// Point PLUTO_NUXT_CONTENT_PATH (and PLUTO_PLUTO_PATH, which the layer reads) at
-// local checkouts (for example `../nuxt-content` and `../pluto`) to test
-// unpublished changes. Unset, they resolve to the published npm packages.
+import { existsSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+
+// In dev, the site uses the local checkouts next to it (`../nuxt-content` and
+// `../pluto`) when they exist, so unpublished layer changes work at once.
+// PLUTO_USE_LOCAL=false turns this off; PLUTO_NUXT_CONTENT_PATH and
+// PLUTO_PLUTO_PATH (which the layer reads) still win. A production build, or a
+// clone without the checkouts (Vercel), uses the published npm packages.
+const useLocal
+  = process.env.PLUTO_USE_LOCAL === 'true'
+    || (process.env.PLUTO_USE_LOCAL !== 'false' && process.env.NODE_ENV !== 'production')
+
+if (useLocal) {
+  for (const [variable, folder] of [
+    ['PLUTO_NUXT_CONTENT_PATH', '../nuxt-content'],
+    ['PLUTO_PLUTO_PATH', '../pluto']
+  ] as const) {
+    const path = fileURLToPath(new URL(`${folder}/`, import.meta.url))
+    if (!process.env[variable] && existsSync(`${path}nuxt.config.ts`)) {
+      process.env[variable] = path
+    }
+  }
+}
+
 const nuxtContentLayer = process.env.PLUTO_NUXT_CONTENT_PATH || '@plutocms/nuxt-content'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
