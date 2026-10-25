@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// The OG image renderer does not know the site theme, so the colors are the
+// hex values of the Pluto palette (app/assets/css/main.css).
 defineOptions({
   inheritAttrs: false
 })
@@ -12,10 +14,13 @@ defineProps<{
 
 <template>
   <div
-    class="w-full h-full flex bg-neutral-950 relative overflow-hidden"
-    data-theme="dark"
+    class="w-full h-full flex relative overflow-hidden"
+    :style="{ backgroundColor: '#0C0F1F', backgroundImage: 'radial-gradient(circle at 90% 0%, #1B4773 0%, #0C0F1F 55%)' }"
   >
-    <div class="absolute top-0 left-0 w-2 h-full bg-primary-400" />
+    <div
+      class="absolute top-0 left-0 w-2 h-full"
+      :style="{ backgroundColor: '#FB7E4F' }"
+    />
 
     <div class="flex flex-col justify-between flex-1 px-20 py-16">
       <div />
@@ -23,22 +28,24 @@ defineProps<{
       <div class="flex flex-col gap-5">
         <span
           v-if="headline"
-          class="text-2xl font-medium text-primary-400"
+          class="text-2xl font-medium"
+          :style="{ color: '#FB7E4F' }"
         >
           {{ headline }}
         </span>
 
         <h1
           v-if="title"
-          class="text-6xl font-bold text-highlighted"
+          class="text-6xl font-bold"
+          :style="{ color: '#FFFFFF' }"
         >
           {{ title }}
         </h1>
 
         <p
           v-if="description"
-          class="text-3xl/11 text-muted"
-          :style="{ lineClamp: 2, textOverflow: 'ellipsis' }"
+          class="text-3xl/11"
+          :style="{ color: '#C2C8D9', lineClamp: 2, textOverflow: 'ellipsis' }"
         >
           {{ description }}
         </p>
@@ -116,8 +123,14 @@ defineProps<{
             fill="black"
           />
         </svg>
-        <div class="h-px flex-1 bg-neutral-800" />
-        <span class="text-2xl font-semibold text-highlighted">pluto</span>
+        <div
+          class="h-px flex-1"
+          :style="{ backgroundColor: '#3E4562' }"
+        />
+        <span
+          class="text-2xl font-semibold"
+          :style="{ color: '#FFFFFF' }"
+        >pluto</span>
       </div>
     </div>
   </div>
