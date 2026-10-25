@@ -16,6 +16,10 @@ useSeoMeta({
 })
 
 defineOgImage('Docs', { title, description, headline: 'Pluto' })
+
+// The landing is the `index` page of the `doc` type, so the admin bar shows
+// "Edit page" for it.
+usePlutoContentEditLink(page)
 </script>
 
 <template>
