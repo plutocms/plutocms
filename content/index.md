@@ -1,7 +1,7 @@
 ---
 seo:
-  title: Pluto CMS, the layerable CMS
-  description: Pluto CMS is a CMS for Nuxt. You build it from layers. Use it with no database, or with Supabase.
+  title: Pluto, the layerable CMS
+  description: Pluto is a CMS for Nuxt. You build it from layers. Use it with no database, or with Supabase.
 ---
 
 ::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}

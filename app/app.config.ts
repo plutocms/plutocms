@@ -30,10 +30,10 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'Pluto CMS'
+    siteName: 'Pluto'
   },
   header: {
-    title: 'Pluto CMS',
+    title: 'Pluto',
     to: '/',
     logo: {
       alt: '',
@@ -50,13 +50,13 @@ export default defineAppConfig({
     }]
   },
   footer: {
-    credits: `Pluto CMS • MIT • © ${new Date().getFullYear()}`,
+    credits: `Pluto • MIT • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-github',
       'to': 'https://github.com/plutocms/pluto',
       'target': '_blank',
-      'aria-label': 'Pluto CMS on GitHub'
+      'aria-label': 'Pluto on GitHub'
     }]
   },
   toc: {
