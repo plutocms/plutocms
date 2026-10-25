@@ -104,8 +104,8 @@
   color: var(--color-kuiper-950);
 }
 
-/* Titles use the rounded face of the wordmark. */
-:root:not([data-pluto-admin]) :is(h1, h2) {
+/* Page titles (h1 only) use the rounded face of the wordmark. */
+:root:not([data-pluto-admin]) h1 {
   font-family: var(--font-display);
   letter-spacing: -0.01em;
 }

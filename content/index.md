@@ -52,7 +52,9 @@ Pluto is a CMS for [Nuxt](https://nuxt.com), made of layers. Start with a small 
 
 ::u-page-section
 #headline
-Why the name?
+  :::pluto-chip{icon="i-lucide-telescope" center}
+  Why the name?
+  :::
 
 #title
 Pluto is small. People love it anyway.

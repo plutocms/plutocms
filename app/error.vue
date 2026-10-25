@@ -28,7 +28,7 @@ useSeoMeta({
           class="lost size-32 sm:size-40"
         />
 
-        <p class="font-display text-6xl font-semibold text-primary">
+        <p class="text-6xl font-bold text-primary">
           {{ error.statusCode }}
         </p>
 

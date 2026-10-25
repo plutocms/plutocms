@@ -18,7 +18,12 @@ const { header } = useAppConfig()
     />
 
     <template #title>
-      <PlutoLogo class="h-7 w-auto shrink-0 text-highlighted" />
+      <span
+        title="Pluto CMS"
+        class="flex"
+      >
+        <PlutoLogo class="h-8 w-auto shrink-0 text-highlighted" />
+      </span>
     </template>
 
     <template #right>

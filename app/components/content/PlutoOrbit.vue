@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // The hero illustration: the Pluto planet with its layers in orbit. Each ring
 // is a group of layers, from the closest (the building blocks) to the farthest
-// (the feature layers). Charon, the big moon, has a red pole: Mordor Macula.
+// (the feature layers). The five moons of Pluto turn between the rings, from
+// the closest (Charon, the big one, with its red pole) to the farthest (Hydra).
 interface Chip {
   label: string
   icon: string
@@ -34,6 +35,15 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
       { label: 'storage', icon: 'i-lucide-images', angle: 290 }
     ]
   }
+]
+
+// Radius and size in % of the illustration width. A closer moon turns faster.
+const moons = [
+  { name: 'Charon', radius: 30, size: 7, duration: 45, angle: 215 },
+  { name: 'Styx', radius: 32.5, size: 1.8, duration: 60, angle: 40 },
+  { name: 'Nix', radius: 34, size: 2.4, duration: 70, angle: 130 },
+  { name: 'Kerberos', radius: 41.5, size: 1.6, duration: 85, angle: 320 },
+  { name: 'Hydra', radius: 44, size: 2.6, duration: 95, angle: 250 }
 ]
 </script>
 
@@ -71,14 +81,24 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
           </span>
         </div>
       </div>
+    </div>
 
-      <!-- Charon rides on the middle ring. -->
+    <div
+      v-for="moon in moons"
+      :key="moon.name"
+      class="moon-orbit absolute inset-0"
+      :style="{ '--orbit-duration': `${moon.duration}s`, 'rotate': `${moon.angle}deg` }"
+    >
       <div
-        v-if="index === 1"
         class="absolute left-1/2 top-1/2 size-0"
-        style="transform: rotate(215deg) translateY(-37cqw)"
+        :style="{ transform: `translateY(-${moon.radius}cqw)` }"
       >
-        <div class="charon -translate-x-1/2 -translate-y-1/2 size-[7cqw] rounded-full" />
+        <div
+          class="moon -translate-x-1/2 -translate-y-1/2 rounded-full"
+          :class="{ charon: moon.name === 'Charon' }"
+          :style="{ width: `${moon.size}cqw`, height: `${moon.size}cqw` }"
+          :title="moon.name"
+        />
       </div>
     </div>
 
@@ -106,6 +126,19 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
   animation: orbit var(--orbit-duration) linear infinite reverse;
 }
 
+/* The moons start at their own angle (`rotate`) and turn from there. */
+.moon-orbit {
+  pointer-events: none;
+  animation: moon var(--orbit-duration) linear infinite;
+}
+
+.moon {
+  pointer-events: auto;
+  background: radial-gradient(circle at 35% 35%, #e4e4ea, #9a9ca6);
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.5);
+}
+
+/* Charon is grey with a red pole: Mordor Macula. */
 .charon {
   background: radial-gradient(circle at 50% 18%, #9a4a3a 0 22%, transparent 34%),
     radial-gradient(circle at 35% 35%, #c9c9cf, #8d8f99);
@@ -122,6 +155,12 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
   }
 }
 
+@keyframes moon {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes float {
   50% {
     transform: translateY(-3%) rotate(-2deg);
@@ -131,6 +170,7 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
 @media (prefers-reduced-motion: reduce) {
   .orbit-ring,
   .orbit-chip,
+  .moon-orbit,
   .planet {
     animation: none;
   }

@@ -16,19 +16,15 @@
 
     <UContainer class="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.1fr_1fr] lg:py-28">
       <div class="flex flex-col items-start gap-6">
-        <span
+        <PlutoChip
           v-if="$slots.headline"
-          class="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring ring-primary/25"
+          icon="i-lucide-heart"
         >
-          <UIcon
-            name="i-lucide-heart"
-            class="size-4"
-          />
           <slot
             name="headline"
             mdc-unwrap="p"
           />
-        </span>
+        </PlutoChip>
 
         <h1 class="text-5xl font-semibold tracking-tight text-highlighted text-balance sm:text-6xl lg:text-7xl">
           <slot
