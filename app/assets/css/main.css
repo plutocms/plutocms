@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+/* Every Pluto layer's CSS: the admin theme and layer tokens. The app's own
+   theme follows these lines. */
+@import '#build/pluto.css';
+
+@source "../../../content/**/*";
+
+@theme static {
+  --container-8xl: 90rem;
+  --font-sans: 'Public Sans', sans-serif;
+
+  --color-green-50: #EFFDF5;
+  --color-green-100: #D9FBE8;
+  --color-green-200: #B3F5D1;
+  --color-green-300: #75EDAE;
+  --color-green-400: #00DC82;
+  --color-green-500: #00C16A;
+  --color-green-600: #00A155;
+  --color-green-700: #007F45;
+  --color-green-800: #016538;
+  --color-green-900: #0A5331;
+  --color-green-950: #052E16;
+}
+
+:root {
+  --ui-container: var(--container-8xl);
+}
+
+/*
+ * The public pages keep the 4rem header of the Nuxt UI Docs template. Pluto
+ * sets `--ui-header-height: 2.5rem` for the admin. The admin bar keeps its own
+ * height in `--pluto-admin-bar-height` (2.5rem). The nuxt-content layer adds the
+ * bar height to this value while the admin bar shows on a public page.
+ */
+:root:not([data-pluto-admin]) {
+  --ui-header-height: 4rem;
+}
