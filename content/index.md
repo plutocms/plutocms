@@ -12,10 +12,10 @@ orientation: horizontal
 :hero-background
 
 #title
-Pluto CMS: the [layerable CMS]{.text-primary}.
+The [layerable CMS]{.text-primary}.
 
 #description
-Pluto CMS is a CMS for [Nuxt](https://nuxt.com). You build it from layers. You install only the layers that you need. Run it with no database, or on top of Supabase.
+Pluto is a CMS powered by [Nuxt](https://nuxt.com). You build it from layers. You install only the layers that you need. Run it with no database by default, but pick one when needed.
 
 #links
   :::u-button
