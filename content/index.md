@@ -45,7 +45,7 @@ Pluto is a CMS for [Nuxt](https://nuxt.com), made of layers. Start with a small 
   ---
 
   ```bash [Terminal]
-  bun create pluto@latest
+  npm create pluto@latest
   ```
   :::
 ::
