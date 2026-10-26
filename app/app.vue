@@ -1,10 +1,13 @@
 <script setup lang="ts">
 const { seo } = useAppConfig()
 
-// The admin is a single-page app with its own layout. The public pages get the
-// header, main, footer and search of the docs template.
+// The admin is a single-page app with its own layout. The preview of the visual
+// editor shows only the page. The public pages get the header, main, footer and
+// search of the docs template.
 const route = useRoute()
 const isAdmin = computed(() => route.path === '/admin' || route.path.startsWith('/admin/'))
+// The preview page of the visual editor (an iframe in the admin) has no header, footer or search.
+const isPreview = computed(() => isPlutoPreviewPath(route.path))
 
 useHead({
   meta: [
@@ -30,7 +33,7 @@ useSeoMeta({
 
 <template>
   <PlutoRoot>
-    <NuxtPage v-if="isAdmin" />
+    <NuxtPage v-if="isAdmin || isPreview" />
 
     <AppShell v-else>
       <NuxtPage />

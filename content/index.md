@@ -12,7 +12,7 @@ Small core. Big heart.
 A small CMS with a [big heart]{.text-primary}.
 
 #description
-Pluto is a CMS for [Nuxt](https://nuxt.com), made of layers. Start with a small core: free, and with no database. Add a layer when your site needs one.
+Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add layers as needed.
 
 #links
   :::u-button
@@ -45,7 +45,7 @@ Pluto is a CMS for [Nuxt](https://nuxt.com), made of layers. Start with a small 
   ---
 
   ```bash [Terminal]
-  bun create pluto@latest
+  npm create pluto@latest
   ```
   :::
 ::
@@ -82,7 +82,7 @@ In 2006, Pluto lost its title of planet. It is smaller than our Moon. Then, in 2
   It is made of layers
 
   #description
-  New Horizons saw more than 20 layers of haze in the air of Pluto. The CMS is layers too: a small core, and one layer for each job.
+  New Horizons saw more than 20 layers of haze in the air of Pluto. Pluto CMS has layers too: a small core, and one layer for each job.
   :::
 
   :::u-page-feature
@@ -197,6 +197,7 @@ Pick the mode that fits your project.
   ---
   Supabase gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library.
   :::
+#headline
 ::
 
 ::u-page-section
