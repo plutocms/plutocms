@@ -16,6 +16,15 @@ const { footer } = useAppConfig()
 
     <p class="text-sm text-dimmed">
       {{ footer.tagline }}
+      <template v-if="footer.poweredBy">
+        ·
+        <ULink
+          :to="footer.poweredBy.to"
+          class="text-muted hover:text-highlighted"
+        >
+          {{ footer.poweredBy.label }}
+        </ULink>
+      </template>
     </p>
 
     <template #right>

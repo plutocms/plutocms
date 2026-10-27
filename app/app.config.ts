@@ -90,6 +90,8 @@ export default defineAppConfig({
   footer: {
     credits: `Pluto • MIT • © ${new Date().getFullYear()}`,
     tagline: 'Made at the edge of the solar system.',
+    // The docs are a Nuxt Content site that Pluto edits. The link explains it.
+    poweredBy: { label: 'These docs run on Pluto', to: '/getting-started/why-pluto#these-docs-run-on-pluto' },
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-github',
