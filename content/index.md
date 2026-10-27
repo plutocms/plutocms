@@ -185,7 +185,7 @@ Pick the mode that fits your project.
 #features
   :::u-page-card
   ---
-  icon: i-lucide-github
+  icon: lucide:github
   to: /github-cms
   title: Standalone mode
   ---
@@ -194,7 +194,7 @@ Pick the mode that fits your project.
 
   :::u-page-card
   ---
-  icon: i-lucide-database
+  icon: lucide:database
   to: /supabase
   title: Supabase mode
   ---
