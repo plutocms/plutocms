@@ -47,6 +47,22 @@
         <div class="w-full max-w-md">
           <slot />
         </div>
+
+        <p
+          v-if="$slots.notice"
+          class="flex items-center gap-2 text-sm text-muted"
+        >
+          <UIcon
+            name="i-lucide-flask-conical"
+            class="size-4 shrink-0 text-primary"
+          />
+          <span>
+            <slot
+              name="notice"
+              mdc-unwrap="p"
+            />
+          </span>
+        </p>
       </div>
 
       <PlutoOrbit class="max-w-sm sm:max-w-md lg:max-w-none" />

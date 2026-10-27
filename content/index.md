@@ -1,7 +1,7 @@
 ---
 seo:
   title: Pluto, a small CMS with a big heart
-  description: Pluto is a CMS for Nuxt. You build it from layers. Use it with no database, or with Supabase.
+  description: Pluto is a CMS that you build from Nuxt layers. Use it in your Nuxt app, or headless with any stack. Use it with no database, or with Supabase.
 ---
 
 ::pluto-hero
@@ -48,6 +48,9 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
   npm create pluto@latest
   ```
   :::
+
+#notice
+Pluto is in alpha. Expect breaking changes until the first stable release.
 ::
 
 ::u-page-section
