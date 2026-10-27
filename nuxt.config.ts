@@ -55,8 +55,12 @@ export default defineNuxtConfig({
    */
 
   // The landing page (`index.md`) is a page too, so the source is the content dir.
+  // `render: 'hybrid'` is for testing and will go back to `'build'`. The pages are built with
+  // the site, and the server reads a page from the repository only when its file changed
+  // after the build. Hybrid mode needs a server, so the content pages are not prerendered.
   plutoNuxtContent: {
-    types: [{ preset: 'docs', name: 'doc', source: '' }]
+    types: [{ preset: 'docs', name: 'doc', source: '' }],
+    render: 'hybrid'
   },
 
   compatibilityDate: '2026-06-30',
@@ -137,19 +141,15 @@ export default defineNuxtConfig({
     ]
   },
 
-  ogImage: {
-    zeroRuntime: true
-  },
+  // The OG images render at run time: with no prerendered pages, nothing creates them at build time.
+  // Set `zeroRuntime: true` again when the site goes back to `render: 'build'` and prerenders.
+  ogImage: {},
 
   routeRules: {
     // The admin is a single-page app. Never prerender it.
     '/admin/**': { prerender: false }
-  },
-
-  prerender: {
-    routes: [
-      '/'
-    ],
-    crawlLinks: true
   }
+
+  // There is no `prerender` key on purpose. In hybrid mode, a prerendered docs page would hide a
+  // later edit. For `render: 'build'`, add `prerender: { routes: ['/'], crawlLinks: true }` again.
 })

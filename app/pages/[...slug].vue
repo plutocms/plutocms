@@ -13,16 +13,14 @@ const { toc } = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 const routePath = computed(() => withoutTrailingSlash(route.path))
 
-const { data: page } = await useAsyncData(routePath.value, () => queryCollection('docs').path(routePath.value).first())
+// The page and the surround come from the nuxt-content layer, which reads them at build
+// time or at run time (plutoNuxtContent.render), so this page does not know the mode.
+const { data: page } = await usePlutoContentPage(routePath, { collection: 'docs' })
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${routePath.value}-surround`, () => {
-  return queryCollectionItemSurroundings('docs', routePath.value, {
-    fields: ['description']
-  })
-})
+const { data: surround } = await usePlutoContentSurround(routePath, { collection: 'docs' })
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
