@@ -9,7 +9,7 @@ seo:
 Small core. Big heart.
 
 #title
-A small CMS with a [biiiig heart]{.text-primary}.
+A small CMS with a [big heart]{.text-primary}.
 
 #description
 Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add layers as needed.
