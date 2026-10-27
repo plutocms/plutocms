@@ -10,7 +10,8 @@ export default defineAppConfig({
         headline: { label: 'Small label', content: 'inline' },
         title: { label: 'Title', content: 'inline' },
         description: { label: 'Text', content: 'rich' },
-        links: { label: 'Buttons', content: 'blocks', accepts: ['u-button'] }
+        links: { label: 'Buttons', content: 'blocks', accepts: ['u-button'] },
+        notice: { label: 'Notice', content: 'inline' }
       },
       insert: '::pluto-hero\n#headline\nA small label\n\n#title\nYour title\n\n#description\nA short text about Pluto.\n::'
     },

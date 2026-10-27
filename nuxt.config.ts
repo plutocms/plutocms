@@ -83,7 +83,7 @@ export default defineNuxtConfig({
   llms: {
     domain: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     title: 'Pluto',
-    description: 'Documentation of Pluto, the layerable CMS for Nuxt.',
+    description: 'Documentation of Pluto, the layerable CMS built on Nuxt. Use it in a Nuxt app, or headless with any stack.',
     full: {
       title: 'Pluto - Full Documentation',
       description: 'This is the full documentation of Pluto.'
