@@ -213,7 +213,7 @@ Pick the mode that fits your project.
       variant: subtle
       icon: i-simple-icons-github
   title: Ready to start small?
-  description: Create a project in one command. Read the guides when you want to add your own layer.
+  description: Create a project in one command. Read the guides when you want to add your own layer. These docs run on Pluto too, and we edit them in its admin.
   ---
 
   :stars-bg
