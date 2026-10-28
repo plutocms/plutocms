@@ -14,7 +14,6 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
     size: 50,
     duration: 70,
     chips: [
-      { label: 'ui', icon: 'i-lucide-component', angle: 20 },
       { label: 'utils', icon: 'i-lucide-wrench', angle: 200 }
     ]
   },
