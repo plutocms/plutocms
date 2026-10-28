@@ -30,13 +30,10 @@ const fact = computed(() => {
 </script>
 
 <template>
-  <div class="flex gap-3 rounded-lg bg-elevated/60 p-3 ring ring-default">
-    <PlutoLogo
-      mark
-      class="size-7 shrink-0"
-    />
-    <p class="text-xs/5 text-muted">
-      <span class="font-semibold text-highlighted">Pluto fact.</span>
+  <div class="bg-elevated/60 ring-default flex gap-3 rounded-lg p-3 ring">
+    <PlutoLogo mark class="size-7 shrink-0" />
+    <p class="text-muted text-xs/5">
+      <span class="text-highlighted font-semibold">Pluto fact.</span>
       {{ fact }}
     </p>
   </div>

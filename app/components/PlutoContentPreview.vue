@@ -6,9 +6,13 @@ const props = defineProps<{
   frontmatter: Record<string, unknown>
 }>()
 
-const landing = computed(() => props.frontmatter.id === 'index' || props.frontmatter.slug === 'index')
+const landing = computed(
+  () => props.frontmatter.id === 'index' || props.frontmatter.slug === 'index'
+)
 
-usePlutoPreviewRender(() => (landing.value ? { prose: false, components: { a: 'prose-a' } } : {}))
+usePlutoPreviewRender(() =>
+  landing.value ? { prose: false, components: { a: 'prose-a' } } : {}
+)
 </script>
 
 <template>
@@ -20,7 +24,11 @@ usePlutoPreviewRender(() => (landing.value ? { prose: false, components: { a: 'p
       <UPageHeader
         v-if="typeof frontmatter.title === 'string' && frontmatter.title"
         :title="frontmatter.title"
-        :description="typeof frontmatter.description === 'string' ? frontmatter.description : undefined"
+        :description="
+          typeof frontmatter.description === 'string'
+            ? frontmatter.description
+            : undefined
+        "
       />
 
       <UPageBody>

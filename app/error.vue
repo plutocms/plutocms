@@ -22,24 +22,29 @@ useSeoMeta({
 <template>
   <PlutoRoot>
     <AppShell>
-      <UContainer class="flex min-h-[70dvh] flex-col items-center justify-center gap-6 py-16 text-center">
-        <PlutoLogo
-          mark
-          class="lost size-32 sm:size-40"
-        />
+      <UContainer
+        class="flex min-h-[70dvh] flex-col items-center justify-center gap-6 py-16 text-center"
+      >
+        <PlutoLogo mark class="lost size-32 sm:size-40" />
 
-        <p class="text-6xl font-bold text-primary">
+        <p class="text-primary text-6xl font-bold">
           {{ error.statusCode }}
         </p>
 
-        <h1 class="text-3xl font-semibold text-highlighted sm:text-4xl">
-          {{ notFound ? 'This page is not a planet anymore.' : 'Something went wrong.' }}
+        <h1 class="text-highlighted text-3xl font-semibold sm:text-4xl">
+          {{
+            notFound
+              ? 'This page is not a planet anymore.'
+              : 'Something went wrong.'
+          }}
         </h1>
 
-        <p class="max-w-md text-lg text-muted">
-          {{ notFound
-            ? 'Like Pluto in 2006, this page lost its place on the map. It may be out there, at the edge of the solar system.'
-            : error.statusMessage || error.message }}
+        <p class="text-muted max-w-md text-lg">
+          {{
+            notFound
+              ? 'Like Pluto in 2006, this page lost its place on the map. It may be out there, at the edge of the solar system.'
+              : error.statusMessage || error.message
+          }}
         </p>
 
         <div class="flex flex-wrap justify-center gap-3">

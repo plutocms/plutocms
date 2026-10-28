@@ -13,7 +13,8 @@ export default defineAppConfig({
         links: { label: 'Buttons', content: 'blocks', accepts: ['u-button'] },
         notice: { label: 'Notice', content: 'inline' }
       },
-      insert: '::pluto-hero\n#headline\nA small label\n\n#title\nYour title\n\n#description\nA short text about Pluto.\n::'
+      insert:
+        '::pluto-hero\n#headline\nA small label\n\n#title\nYour title\n\n#description\nA short text about Pluto.\n::'
     },
     'pluto-chip': {
       label: 'Chip',
@@ -81,37 +82,46 @@ export default defineAppConfig({
     to: '/',
     search: true,
     colorMode: true,
-    links: [{
-      'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/plutocms/pluto',
-      'target': '_blank',
-      'aria-label': 'GitHub'
-    }]
+    links: [
+      {
+        icon: 'i-simple-icons-github',
+        to: 'https://github.com/plutocms/pluto',
+        target: '_blank',
+        'aria-label': 'GitHub'
+      }
+    ]
   },
   footer: {
     credits: `Pluto • MIT • © ${new Date().getFullYear()}`,
     tagline: 'Made at the edge of the solar system.',
     // The docs are a Nuxt Content site that Pluto edits. The link explains it.
-    poweredBy: { label: 'These docs run on Pluto', to: '/getting-started/why-pluto#these-docs-run-on-pluto' },
+    poweredBy: {
+      label: 'These docs run on Pluto',
+      to: '/getting-started/why-pluto#these-docs-run-on-pluto'
+    },
     colorMode: false,
-    links: [{
-      'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/plutocms/pluto',
-      'target': '_blank',
-      'aria-label': 'Pluto on GitHub'
-    }]
+    links: [
+      {
+        icon: 'i-simple-icons-github',
+        to: 'https://github.com/plutocms/pluto',
+        target: '_blank',
+        'aria-label': 'Pluto on GitHub'
+      }
+    ]
   },
   toc: {
     title: 'On this page',
     bottom: {
       title: 'Community',
       edit: 'https://github.com/plutocms/plutocms/edit/main/content',
-      links: [{
-        icon: 'i-lucide-star',
-        label: 'Star on GitHub',
-        to: 'https://github.com/plutocms/pluto',
-        target: '_blank'
-      }]
+      links: [
+        {
+          icon: 'i-lucide-star',
+          label: 'Star on GitHub',
+          to: 'https://github.com/plutocms/pluto',
+          target: '_blank'
+        }
+      ]
     }
   }
 })

@@ -6,15 +6,12 @@ const { footer } = useAppConfig()
   <UFooter>
     <template #left>
       <div class="flex items-center gap-2">
-        <PlutoLogo
-          mark
-          class="size-5"
-        />
+        <PlutoLogo mark class="size-5" />
         {{ footer.credits }}
       </div>
     </template>
 
-    <p class="text-sm text-dimmed">
+    <p class="text-dimmed text-sm">
       {{ footer.tagline }}
       <template v-if="footer.poweredBy">
         ·

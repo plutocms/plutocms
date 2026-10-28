@@ -15,12 +15,20 @@ const routePath = computed(() => withoutTrailingSlash(route.path))
 
 // The page and the surround come from the nuxt-content layer, which reads them at build
 // time or at run time (plutoNuxtContent.render), so this page does not know the mode.
-const { data: page } = await usePlutoContentPage(routePath, { collection: 'docs' })
+const { data: page } = await usePlutoContentPage(routePath, {
+  collection: 'docs'
+})
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page not found',
+    fatal: true
+  })
 }
 
-const { data: surround } = await usePlutoContentSurround(routePath, { collection: 'docs' })
+const { data: surround } = await usePlutoContentSurround(routePath, {
+  collection: 'docs'
+})
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
@@ -32,7 +40,9 @@ useSeoMeta({
   ogDescription: description
 })
 
-const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
+const headline = computed(() =>
+  findPageHeadline(navigation?.value, page.value?.path)
+)
 
 defineOgImage('Docs', { title, description, headline: headline.value })
 
@@ -82,41 +92,23 @@ const links = computed(() => {
       </UPageHeader>
 
       <UPageBody>
-        <ContentRenderer
-          v-if="page"
-          :value="page"
-        />
+        <ContentRenderer v-if="page" :value="page" />
 
         <USeparator v-if="surround?.length" />
 
         <UContentSurround :surround="surround" />
       </UPageBody>
 
-      <template
-        v-if="page?.body?.toc?.links?.length"
-        #right
-      >
-        <UContentToc
-          :title="toc?.title"
-          :links="page.body?.toc?.links"
-        >
-          <template
-            v-if="toc?.bottom"
-            #bottom
-          >
+      <template v-if="page?.body?.toc?.links?.length" #right>
+        <UContentToc :title="toc?.title" :links="page.body?.toc?.links">
+          <template v-if="toc?.bottom" #bottom>
             <div
-              class="hidden lg:block space-y-6"
+              class="hidden space-y-6 lg:block"
               :class="{ 'mt-6!': page.body?.toc?.links?.length }"
             >
-              <USeparator
-                v-if="page.body?.toc?.links?.length"
-                type="dashed"
-              />
+              <USeparator v-if="page.body?.toc?.links?.length" type="dashed" />
 
-              <UPageLinks
-                :title="toc.bottom.title"
-                :links="links"
-              />
+              <UPageLinks :title="toc.bottom.title" :links="links" />
 
               <PlutoFact :seed="page.path" />
             </div>

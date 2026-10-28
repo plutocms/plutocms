@@ -4,10 +4,16 @@
 // data. `provide('navigation')` serves the header and the docs layout. The page data
 // comes from the nuxt-content layer composables, which hide the render mode. The
 // search stays build time: it reads the Nuxt Content index.
-const { data: navigation } = await usePlutoContentNavigation({ collection: 'docs' })
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-  server: false
+const { data: navigation } = await usePlutoContentNavigation({
+  collection: 'docs'
 })
+const { data: files } = useLazyAsyncData(
+  'search',
+  () => queryCollectionSearchSections('docs'),
+  {
+    server: false
+  }
+)
 
 provide('navigation', navigation)
 </script>
@@ -24,9 +30,6 @@ provide('navigation', navigation)
   <AppFooter />
 
   <ClientOnly>
-    <LazyUContentSearch
-      :files="files"
-      :navigation="navigation"
-    />
+    <LazyUContentSearch :files="files" :navigation="navigation" />
   </ClientOnly>
 </template>

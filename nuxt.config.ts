@@ -73,17 +73,17 @@ export default defineNuxtConfig({
       nuxt: {
         sortConfigKeys: false
       },
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
+      // Prettier formats the code (format on save, `bun run prettier`). ESLint checks the
+      // code, not its layout.
+      stylistic: false
     }
   },
 
   llms: {
     domain: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     title: 'Pluto',
-    description: 'Documentation of Pluto, the layerable CMS built on Nuxt. Use it in a Nuxt app, or headless with any stack.',
+    description:
+      'Documentation of Pluto, the layerable CMS built on Nuxt. Use it in a Nuxt app, or headless with any stack.',
     full: {
       title: 'Pluto - Full Documentation',
       description: 'This is the full documentation of Pluto.'
@@ -99,9 +99,7 @@ export default defineNuxtConfig({
       {
         title: 'Core',
         contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/core%' }
-        ]
+        contentFilters: [{ field: 'path', operator: 'LIKE', value: '/core%' }]
       },
       {
         title: 'GitHub CMS',
@@ -120,16 +118,12 @@ export default defineNuxtConfig({
       {
         title: 'Layers',
         contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/layers%' }
-        ]
+        contentFilters: [{ field: 'path', operator: 'LIKE', value: '/layers%' }]
       },
       {
         title: 'Guides',
         contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/guides%' }
-        ]
+        contentFilters: [{ field: 'path', operator: 'LIKE', value: '/guides%' }]
       },
       {
         title: 'Contributing',
