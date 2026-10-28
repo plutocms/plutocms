@@ -18,7 +18,7 @@ defineProps<{
 
 <template>
   <div
-    class="w-full h-full flex relative overflow-hidden"
+    class="size-full flex relative overflow-hidden"
     :style="{ backgroundColor: '#0C0F1F', backgroundImage: 'radial-gradient(circle at 90% 0%, #1B4773 0%, #0C0F1F 55%)' }"
   >
     <div
@@ -26,7 +26,7 @@ defineProps<{
       :style="{ backgroundColor: '#FB7E4F' }"
     />
 
-    <div class="flex flex-col justify-between flex-1 px-[200px] py-16">
+    <div class="flex flex-col justify-between flex-1 px-50 py-16">
       <div />
 
       <div class="flex flex-col gap-5">

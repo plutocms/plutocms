@@ -48,7 +48,7 @@ const moons = [
 
 <template>
   <div
-    class="pluto-orbit relative mx-auto aspect-square w-full max-w-[32rem]"
+    class="pluto-orbit relative mx-auto aspect-square w-full max-w-lg"
     aria-hidden="true"
   >
     <!-- The blue haze of Pluto's atmosphere. -->
@@ -70,7 +70,7 @@ const moons = [
         class="absolute left-1/2 top-1/2 size-0"
         :style="{ transform: `rotate(${chip.angle}deg) translateY(calc(${ring.size / 2} * -1cqw)) rotate(${-chip.angle}deg)` }"
       >
-        <div class="orbit-chip -translate-x-1/2 -translate-y-1/2 w-max">
+        <div class="orbit-chip -translate-1/2 w-max">
           <span class="flex items-center gap-1.5 rounded-full bg-default/90 px-2.5 py-1 text-xs font-medium text-highlighted shadow-sm ring ring-default backdrop-blur">
             <UIcon
               :name="chip.icon"
@@ -93,7 +93,7 @@ const moons = [
         :style="{ transform: `translateY(-${moon.radius}cqw)` }"
       >
         <div
-          class="moon -translate-x-1/2 -translate-y-1/2 rounded-full"
+          class="moon -translate-1/2 rounded-full"
           :class="{ charon: moon.name === 'Charon' }"
           :style="{ width: `${moon.size}cqw`, height: `${moon.size}cqw` }"
           :title="moon.name"
