@@ -4,7 +4,8 @@
 </script>
 
 <template>
-  <section class="relative isolate overflow-hidden">
+  <!-- The hero starts under the site header, so its sky shows behind the clear header (AppHeader). -->
+  <section class="relative isolate -mt-(--pluto-site-header-height) overflow-hidden pt-(--pluto-site-header-height)">
     <!-- Light mode: a warm sky with the cream of the heart. Dark mode: space. -->
     <div class="hero-sky absolute inset-0 -z-10" />
     <StarsBg
