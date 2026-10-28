@@ -18,15 +18,19 @@ defineProps<{
 
 <template>
   <div
-    class="size-full flex relative overflow-hidden"
-    :style="{ backgroundColor: '#0C0F1F', backgroundImage: 'radial-gradient(circle at 90% 0%, #1B4773 0%, #0C0F1F 55%)' }"
+    class="relative flex size-full overflow-hidden"
+    :style="{
+      backgroundColor: '#0C0F1F',
+      backgroundImage:
+        'radial-gradient(circle at 90% 0%, #1B4773 0%, #0C0F1F 55%)'
+    }"
   >
     <div
-      class="absolute top-0 left-0 w-full h-2"
+      class="absolute top-0 left-0 h-2 w-full"
       :style="{ backgroundColor: '#FB7E4F' }"
     />
 
-    <div class="flex flex-col justify-between flex-1 px-50 py-16">
+    <div class="flex flex-1 flex-col justify-between px-50 py-16">
       <div />
 
       <div class="flex flex-col gap-5">
@@ -86,55 +90,21 @@ defineProps<{
             stroke-linejoin="round"
             stroke="black"
           />
-          <circle
-            cx="204.107"
-            cy="98.8929"
-            r="33.107"
-            fill="black"
-          />
-          <circle
-            cx="222.739"
-            cy="106"
-            r="8"
-            fill="white"
-          />
-          <circle
-            cx="208.107"
-            cy="118"
-            r="4"
-            fill="white"
-          />
-          <circle
-            cx="325.536"
-            cy="98"
-            r="33.107"
-            fill="black"
-          />
-          <circle
-            cx="341"
-            cy="106"
-            r="8"
-            fill="white"
-          />
-          <circle
-            cx="325.536"
-            cy="118"
-            r="4"
-            fill="white"
-          />
+          <circle cx="204.107" cy="98.8929" r="33.107" fill="black" />
+          <circle cx="222.739" cy="106" r="8" fill="white" />
+          <circle cx="208.107" cy="118" r="4" fill="white" />
+          <circle cx="325.536" cy="98" r="33.107" fill="black" />
+          <circle cx="341" cy="106" r="8" fill="white" />
+          <circle cx="325.536" cy="118" r="4" fill="white" />
           <path
             d="M212.107 158.775C254.216 151.134 281.939 150.553 318.904 158.775C318.904 187.914 295.282 211.536 266.143 211.536H264.868C235.729 211.536 212.107 187.914 212.107 158.775Z"
             fill="black"
           />
         </svg>
-        <div
-          class="h-px flex-1"
-          :style="{ backgroundColor: '#3E4562' }"
-        />
-        <span
-          class="text-2xl font-semibold"
-          :style="{ color: '#FFFFFF' }"
-        >pluto</span>
+        <div class="h-px flex-1" :style="{ backgroundColor: '#3E4562' }" />
+        <span class="text-2xl font-semibold" :style="{ color: '#FFFFFF' }"
+          >pluto</span
+        >
       </div>
     </div>
   </div>

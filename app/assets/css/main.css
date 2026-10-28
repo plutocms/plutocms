@@ -4,7 +4,7 @@
    theme follows these lines. */
 @import '#build/pluto.css';
 
-@source "../../../content/**/*";
+@source '../../../content/**/*';
 
 /*
  * The Pluto palette (tholin, haze, heart, kuiper) comes from core: the Pluto

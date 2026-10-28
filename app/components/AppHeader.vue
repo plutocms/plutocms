@@ -15,16 +15,17 @@ const overHero = computed(() => route.path === '/' && y.value < 24)
 
 <template>
   <UHeader
-    :class="overHero ? 'border-transparent bg-transparent backdrop-blur-none' : undefined"
+    :class="
+      overHero
+        ? 'border-transparent bg-transparent backdrop-blur-none'
+        : undefined
+    "
     :to="header?.to || '/'"
     class="transition-[background-color,border-color,backdrop-filter] duration-200"
   >
     <template #title>
-      <span
-        title="Pluto CMS"
-        class="flex"
-      >
-        <PlutoLogo class="h-8 w-auto shrink-0 text-highlighted" />
+      <span title="Pluto CMS" class="flex">
+        <PlutoLogo class="text-highlighted h-8 w-auto shrink-0" />
       </span>
     </template>
 
@@ -52,10 +53,7 @@ const overHero = computed(() => route.path === '/' && y.value < 24)
     </template>
 
     <template #body>
-      <UContentNavigation
-        highlight
-        :navigation="navigation"
-      />
+      <UContentNavigation highlight :navigation="navigation" />
     </template>
   </UHeader>
 </template>
