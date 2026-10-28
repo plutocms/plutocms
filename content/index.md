@@ -19,7 +19,7 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
   ---
   to: /getting-started
   size: xl
-  trailing-icon: i-lucide-arrow-right
+  trailing-icon: lucide:arrow-right
   ---
   Get started
   :::
@@ -49,55 +49,22 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
   ```
   :::
 
+  :::code-group
+  ```bash [npm]
+  npm create pluto@latest
+  ```
+
+  ```bash [bun]
+  bun create pluto@latest
+  ```
+
+  ```bash [pnpm]
+  pnpm create pluto@latest
+  ```
+  :::
+
 #notice
 Pluto is in alpha. Expect breaking changes until the first stable release.
-::
-
-::u-page-section
-#headline
-  :::pluto-chip{icon="i-lucide-telescope" center}
-  Why the name?
-  :::
-
-#title
-Pluto is small. People love it anyway.
-
-#description
-In 2006, Pluto lost its title of planet. It is smaller than our Moon. Then, in 2015, the New Horizons probe flew past it, and Pluto was not simple at all.
-
-#features
-  :::u-page-feature
-  ---
-  icon: i-lucide-heart
-  ---
-  #title
-  It has a heart
-
-  #description
-  Pluto has a big, pale plain in the shape of a heart: Tombaugh Regio. The heart is in our logo. Pluto is free and open source, and we want it to be friendly.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-layers
-  ---
-  #title
-  It is made of layers
-
-  #description
-  New Horizons saw more than 20 layers of haze in the air of Pluto. Pluto CMS has layers too: a small core, and one layer for each job.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-orbit
-  ---
-  #title
-  Small is a feature
-
-  #description
-  A dwarf planet is still a world. The core is small, and you add only what you need. Your site stays light.
-  :::
 ::
 
 ::u-page-section
@@ -201,6 +168,53 @@ Pick the mode that fits your project.
   Supabase gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library.
   :::
 #headline
+::
+
+::u-page-section
+#headline
+  :::pluto-chip{icon="i-lucide-telescope" center}
+  Why the name?
+  :::
+
+#title
+Pluto is small. People love it anyway.
+
+#description
+In 2006, Pluto lost its title of planet. It is smaller than our Moon. Then, in 2015, the New Horizons probe flew past it, and Pluto was not simple at all.
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-heart
+  ---
+  #title
+  It has a heart
+
+  #description
+  Pluto has a big, pale plain in the shape of a heart: Tombaugh Regio. The heart is in our logo. Pluto is free and open source, and we want it to be friendly.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-layers
+  ---
+  #title
+  It is made of layers
+
+  #description
+  New Horizons saw more than 20 layers of haze in the air of Pluto. Pluto CMS has layers too: a small core, and one layer for each job.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-orbit
+  ---
+  #title
+  Small is a feature
+
+  #description
+  A dwarf planet is still a world. The core is small, and you add only what you need. Your site stays light.
+  :::
 ::
 
 ::u-page-section
