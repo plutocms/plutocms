@@ -142,7 +142,7 @@ Pick the mode that fits your project.
   to: /github-cms
   title: Standalone mode
   ---
-  Posts are Markdown files in a GitHub repository. Editors sign in with a GitHub App. Each save is a commit. There is no database.
+  Posts are Markdown files in Git. Each save is a commit: in your local repository out of the box, in GitHub on a deployed site. There is no database.
   :::
 
   :::u-page-card
