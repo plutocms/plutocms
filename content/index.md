@@ -49,20 +49,6 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
   ```
   :::
 
-  :::code-group
-  ```bash [npm]
-  npm create pluto@latest
-  ```
-
-  ```bash [bun]
-  bun create pluto@latest
-  ```
-
-  ```bash [pnpm]
-  pnpm create pluto@latest
-  ```
-  :::
-
 #notice
 Pluto is in alpha. Expect breaking changes until the first stable release.
 ::
