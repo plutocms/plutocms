@@ -1,20 +1,18 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
-/* Every Pluto layer's CSS: the admin theme and layer tokens. The app's own
-   theme follows these lines. */
+/* Every Pluto layer's CSS: the admin theme and the Pluto tokens. */
 @import '#build/pluto.css';
+/*
+ * The Pluto site theme of core: Public Sans and Fredoka, the light and dark shades of the
+ * colors, the deep-space dark mode, the selection color and the page titles. The colors
+ * (tholin, haze, kuiper) are in app.config.ts.
+ */
+@import '#build/pluto-site.css';
 
 @source '../../../content/**/*';
 
-/*
- * The Pluto palette (tholin, haze, heart, kuiper) comes from core: the Pluto
- * UI tokens in @plutocms/pluto (#build/pluto.css above). Light mode uses
- * primary 600 (4.5:1 on white). Dark mode uses primary 400.
- */
 @theme static {
   --container-8xl: 90rem;
-  --font-sans: 'Public Sans', sans-serif;
-  --font-display: 'Fredoka', 'Public Sans', sans-serif;
 }
 
 :root {
@@ -22,39 +20,11 @@
 }
 
 /*
- * The rules below are for the public pages only. The admin keeps its own
- * theme (`data-pluto-admin`).
- *
- * The public pages keep the 4rem header of the Nuxt UI Docs template. Pluto
- * sets `--ui-header-height: 2.5rem` for the admin. The admin bar keeps its own
- * height in `--pluto-admin-bar-height` (2.5rem). The nuxt-content layer adds the
- * bar height to this value while the admin bar shows on a public page.
+ * The public pages keep the 4rem header of the Nuxt UI Docs template. Pluto sets
+ * `--ui-header-height: 2.5rem` for the admin. The admin bar keeps its own height in
+ * `--pluto-admin-bar-height` (2.5rem). The nuxt-content layer adds the bar height to this
+ * value while the admin bar shows on a public page.
  */
 :root:not([data-pluto-admin]) {
   --ui-header-height: 4rem;
-  --ui-primary: var(--ui-color-primary-600);
-  --ui-secondary: var(--ui-color-secondary-700);
-}
-
-/* Dark mode is deep space: kuiper 950, not the Nuxt UI 900. */
-:root:not([data-pluto-admin]).dark {
-  --ui-primary: var(--ui-color-primary-400);
-  --ui-secondary: var(--ui-color-secondary-400);
-  --ui-bg: var(--ui-color-neutral-950);
-  --ui-bg-muted: var(--ui-color-neutral-900);
-  --ui-bg-elevated: var(--ui-color-neutral-900);
-  --ui-bg-accented: var(--ui-color-neutral-800);
-  --ui-border: var(--ui-color-neutral-800);
-  --ui-border-muted: var(--ui-color-neutral-900);
-}
-
-:root:not([data-pluto-admin]) ::selection {
-  background-color: var(--color-heart-200);
-  color: var(--color-kuiper-950);
-}
-
-/* Page titles (h1 only) use the rounded face of the wordmark. */
-:root:not([data-pluto-admin]) h1 {
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
 }
