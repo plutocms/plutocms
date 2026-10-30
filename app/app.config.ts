@@ -28,6 +28,41 @@ export default defineAppConfig({
       slots: { default: { label: 'Text', content: 'inline' } },
       insert: '::pluto-chip{icon="i-lucide-heart"}\nA short label\n::'
     },
+    'pluto-setup-demo': {
+      label: 'Setup demo',
+      icon: 'i-lucide-terminal',
+      group: 'landing',
+      description:
+        'A terminal runs create-pluto, and a browser shows the store, then the admin. It plays while it is on screen.',
+      insert: '::pluto-setup-demo\n::'
+    },
+    'pluto-layers-demo': {
+      label: 'Layers demo',
+      icon: 'i-lucide-layers',
+      group: 'landing',
+      description:
+        'Pick layers, and the stack, the admin menu and the nuxt.config.ts change with them.',
+      insert: '::pluto-layers-demo\n::'
+    },
+    'pluto-headless-demo': {
+      label: 'Headless demo',
+      icon: 'i-lucide-plug',
+      group: 'landing',
+      description:
+        'A request to the public API in three stacks, and its JSON answer.',
+      insert: '::pluto-headless-demo\n::'
+    },
+    'pluto-layer-showcase': {
+      label: 'Layer cards',
+      icon: 'i-lucide-blocks',
+      group: 'landing',
+      description:
+        'The first layers of the directory, with a link to all of them.',
+      props: {
+        limit: { type: 'number', label: 'Number of layers' }
+      },
+      insert: '::pluto-layer-showcase\n::'
+    },
     'pluto-palette': {
       label: 'Color palette',
       icon: 'i-lucide-palette',
@@ -48,24 +83,6 @@ export default defineAppConfig({
       primary: 'tholin',
       secondary: 'haze',
       neutral: 'kuiper'
-    },
-    // The Pluto layer sets the default size of buttons, inputs and form fields
-    // to xl for the admin. The docs template needs the Nuxt UI default (md).
-    // The admin shares these values, so it uses md too.
-    button: {
-      defaultVariants: {
-        size: 'md'
-      }
-    },
-    input: {
-      defaultVariants: {
-        size: 'md'
-      }
-    },
-    formField: {
-      defaultVariants: {
-        size: 'md'
-      }
     },
     footer: {
       slots: {
@@ -97,7 +114,7 @@ export default defineAppConfig({
     // The docs are a Nuxt Content site that Pluto edits. The link explains it.
     poweredBy: {
       label: 'These docs run on Pluto',
-      to: '/getting-started/why-pluto#these-docs-run-on-pluto'
+      to: '/docs/getting-started/why-pluto#these-docs-run-on-pluto'
     },
     colorMode: false,
     links: [

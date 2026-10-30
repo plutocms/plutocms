@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const { data: page } = await usePlutoContentPage('/', { collection: 'landing' })
+const { data: page } = await usePlutoContentPage('/', {
+  collection: 'landing',
+  type: 'page'
+})
 if (!page.value) {
   throw createError({
     statusCode: 404,
@@ -21,9 +24,9 @@ useSeoMeta({
 
 defineOgImage('Docs', { title, description, headline: 'Pluto' })
 
-// The landing is the `index` page of the `doc` type, so the admin bar shows
+// The landing is the `index` page of the `page` type, so the admin bar shows
 // "Edit page" for it.
-usePlutoContentEditLink(page)
+usePlutoContentEditLink(page, 'page')
 </script>
 
 <template>

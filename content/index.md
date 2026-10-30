@@ -17,7 +17,7 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
 #links
   :::u-button
   ---
-  to: /getting-started
+  to: /docs/getting-started
   size: xl
   trailing-icon: lucide:arrow-right
   ---
@@ -26,14 +26,13 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
 
   :::u-button
   ---
-  icon: i-simple-icons-github
+  icon: i-lucide-layers
   color: neutral
   variant: outline
   size: xl
-  to: https://github.com/plutocms/pluto
-  target: _blank
+  to: /layers
   ---
-  GitHub
+  Browse layers
   :::
 
 #default
@@ -51,6 +50,40 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
 
 #notice
 Pluto is in alpha. Expect breaking changes until the first stable release.
+::
+
+::u-page-section
+#headline
+  :::pluto-chip{icon="i-lucide-terminal" center}
+  One command
+  :::
+
+#title
+From zero to an admin in one command
+
+#description
+`create-pluto` asks three questions, downloads a template, and installs it. Start the dev server, and your site and its admin are ready.
+
+#default
+  :::pluto-setup-demo
+  :::
+::
+
+::u-page-section
+#headline
+  :::pluto-chip{icon="i-lucide-layers" center}
+  Layers
+  :::
+
+#title
+A small core. Add a layer when you need it.
+
+#description
+Each layer does one job, and it plugs into the admin with one function. Pick layers, and see the admin and the config change.
+
+#default
+  :::pluto-layers-demo
+  :::
 ::
 
 ::u-page-section
@@ -129,6 +162,23 @@ Each layer does one job. A layer plugs into the admin with one function. You add
 ::
 
 ::u-page-section
+#headline
+  :::pluto-chip{icon="i-lucide-plug" center}
+  Headless
+  :::
+
+#title
+Use it headless, with any stack
+
+#description
+The public API gives your published content as JSON. Read it from Next.js, Astro, a mobile app, or a script.
+
+#default
+  :::pluto-headless-demo
+  :::
+::
+
+::u-page-section
 #title
 Two modes
 
@@ -139,7 +189,7 @@ Pick the mode that fits your project.
   :::u-page-card
   ---
   icon: lucide:github
-  to: /github-cms
+  to: /docs/github-cms
   title: Standalone mode
   ---
   Posts are Markdown files in Git. Each save is a commit: in your local repository out of the box, in GitHub on a deployed site. There is no database.
@@ -148,12 +198,29 @@ Pick the mode that fits your project.
   :::u-page-card
   ---
   icon: lucide:database
-  to: /supabase
+  to: /docs/supabase
   title: Supabase mode
   ---
   Supabase gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library.
   :::
 #headline
+::
+
+::u-page-section
+#headline
+  :::pluto-chip{icon="i-lucide-blocks" center}
+  The layer directory
+  :::
+
+#title
+Layers for your next project
+
+#description
+Backends, features, and add-ons. Each one is a package on npm.
+
+#default
+  :::pluto-layer-showcase
+  :::
 ::
 
 ::u-page-section
@@ -208,7 +275,7 @@ In 2006, Pluto lost its title of planet. It is smaller than our Moon. Then, in 2
   ---
   links:
     - label: Start building
-      to: '/getting-started'
+      to: '/docs/getting-started'
       trailingIcon: i-lucide-arrow-right
     - label: View on GitHub
       to: 'https://github.com/plutocms/pluto'

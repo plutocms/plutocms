@@ -11,6 +11,22 @@ const { header } = useAppConfig()
 const route = useRoute()
 const { y } = useWindowScroll()
 const overHero = computed(() => route.path === '/' && y.value < 24)
+
+// The sections of the site.
+const sections = computed(() => [
+  {
+    label: 'Docs',
+    icon: 'i-lucide-book-open',
+    to: '/docs/getting-started',
+    active: route.path.startsWith('/docs')
+  },
+  {
+    label: 'Layers',
+    icon: 'i-lucide-layers',
+    to: '/layers',
+    active: route.path.startsWith('/layers')
+  }
+])
 </script>
 
 <template>
@@ -28,6 +44,8 @@ const overHero = computed(() => route.path === '/' && y.value < 24)
         <PlutoLogo class="text-highlighted h-8 w-auto shrink-0" />
       </span>
     </template>
+
+    <UNavigationMenu :items="sections" variant="link" />
 
     <template #right>
       <!-- The search is an icon button, like the color mode and the GitHub link. -->
@@ -53,6 +71,12 @@ const overHero = computed(() => route.path === '/' && y.value < 24)
     </template>
 
     <template #body>
+      <UNavigationMenu
+        :items="sections"
+        orientation="vertical"
+        class="-mx-2.5 mb-4"
+      />
+      <USeparator class="mb-4" />
       <UContentNavigation highlight :navigation="navigation" />
     </template>
   </UHeader>

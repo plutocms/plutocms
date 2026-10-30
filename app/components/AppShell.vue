@@ -4,8 +4,16 @@
 // data. `provide('navigation')` serves the header and the docs layout. The page data
 // comes from the nuxt-content layer composables, which hide the render mode. The
 // search stays build time: it reads the Nuxt Content index.
-const { data: navigation } = await usePlutoContentNavigation({
-  collection: 'docs'
+const { data: tree } = await usePlutoContentNavigation({
+  collection: 'docs',
+  type: 'doc'
+})
+// The docs are under `/docs`, so the tree has one root item. The sidebar shows its children.
+const navigation = computed(() => {
+  const items = tree.value ?? []
+  return items.length === 1 && items[0]?.path === '/docs'
+    ? (items[0].children ?? [])
+    : items
 })
 const { data: files } = useLazyAsyncData(
   'search',
