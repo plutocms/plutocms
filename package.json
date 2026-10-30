@@ -20,7 +20,7 @@
     "@nuxt/image": "^2.1.0",
     "@nuxt/ui": "^4.12.0",
     "@nuxtjs/mdc": "^0.23.2",
-    "@plutocms/core": "^0.38.1",
+    "@plutocms/core": "^0.38.2",
     "@plutocms/nuxt-content": "^0.13.0",
     "@takumi-rs/core": "^2.18.1",
     "@vueuse/core": "^14.4.0",
