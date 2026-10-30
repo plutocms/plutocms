@@ -35,6 +35,8 @@ export default withNuxt(
             '^pluto-header-offset$',
             // Scoped CSS classes of the landing and the 404 page.
             '^hero-sky$',
+            // The animations of the landing demos.
+            '^demo-(line|pop|slide|json)$',
             '^pluto-orbit$',
             '^orbit-ring$',
             '^orbit-chip$',

@@ -60,7 +60,7 @@ useSeoMeta({
             color="neutral"
             variant="outline"
             icon="i-lucide-book-open"
-            @click="clearError({ redirect: '/getting-started' })"
+            @click="clearError({ redirect: '/docs/getting-started' })"
           >
             Read the docs
           </UButton>
