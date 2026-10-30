@@ -1,4 +1,4 @@
-import { plutoLayer } from '@plutocms/pluto/layers'
+import { plutoLayer } from '@plutocms/core/layers'
 
 // Set PLUTO_LOCAL_ROOT=.. in .env to use the local Pluto checkouts (Pluto development).
 // Without it, the site uses the published npm packages.
