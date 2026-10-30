@@ -67,7 +67,8 @@ export default defineNuxtConfig({
         source: 'docs',
         routePrefix: '/docs',
         label: 'Doc',
-        labelPlural: 'Docs'
+        labelPlural: 'Docs',
+        icon: 'i-lucide-book-text'
       },
       {
         preset: 'docs',
@@ -75,7 +76,8 @@ export default defineNuxtConfig({
         source: 'layers',
         routePrefix: '/layers',
         label: 'Layer',
-        labelPlural: 'Layers'
+        labelPlural: 'Layers',
+        icon: 'i-lucide-layers'
       },
       {
         preset: 'docs',
@@ -83,7 +85,8 @@ export default defineNuxtConfig({
         source: '',
         exclude: ['docs/', 'layers/'],
         label: 'Page',
-        labelPlural: 'Pages'
+        labelPlural: 'Pages',
+        icon: 'i-lucide-file-text'
       }
     ],
     render: 'hybrid'
