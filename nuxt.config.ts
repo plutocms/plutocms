@@ -82,8 +82,8 @@ export default defineNuxtConfig({
         name: 'page',
         source: '',
         exclude: ['docs/', 'layers/'],
-        label: 'Site page',
-        labelPlural: 'Site pages'
+        label: 'Page',
+        labelPlural: 'Pages'
       }
     ],
     render: 'hybrid'

@@ -39,13 +39,22 @@ const sections = computed(() => [
     :to="header?.to || '/'"
     class="transition-[background-color,border-color,backdrop-filter] duration-200"
   >
-    <template #title>
-      <span title="Pluto CMS" class="flex">
+    <!-- The logo, then the sections, on the left. -->
+    <template #left>
+      <ULink
+        :to="header?.to || '/'"
+        title="Pluto CMS"
+        aria-label="Pluto CMS"
+        class="flex shrink-0"
+      >
         <PlutoLogo class="text-highlighted h-8 w-auto shrink-0" />
-      </span>
+      </ULink>
+      <UNavigationMenu
+        :items="sections"
+        variant="link"
+        class="ms-6 hidden lg:flex"
+      />
     </template>
-
-    <UNavigationMenu :items="sections" variant="link" />
 
     <template #right>
       <!-- The search is an icon button, like the color mode and the GitHub link. -->

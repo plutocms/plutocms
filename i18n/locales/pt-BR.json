@@ -1,0 +1,106 @@
+{
+  "content": {
+    "doc": {
+      "label": "Doc",
+      "labelPlural": "Docs",
+      "fields": {
+        "title": {
+          "label": "Título"
+        },
+        "slug": {
+          "label": "Caminho",
+          "description": "O caminho do arquivo sem .md, por exemplo 2.core/03.content-model. Um caminho novo move o arquivo."
+        },
+        "description": {
+          "label": "Descrição"
+        },
+        "body": {
+          "label": "Conteúdo"
+        },
+        "navigationTitle": {
+          "label": "Título na navegação"
+        },
+        "navigationIcon": {
+          "label": "Ícone na navegação"
+        },
+        "navigationHidden": {
+          "label": "Ocultar da navegação"
+        },
+        "seoTitle": {
+          "label": "Título para SEO"
+        },
+        "seoDescription": {
+          "label": "Descrição para SEO"
+        }
+      }
+    },
+    "layer": {
+      "label": "Layer",
+      "labelPlural": "Layers",
+      "fields": {
+        "title": {
+          "label": "Título"
+        },
+        "slug": {
+          "label": "Caminho",
+          "description": "O caminho do arquivo sem .md, por exemplo 3.supabase-shop. Um caminho novo move o arquivo."
+        },
+        "description": {
+          "label": "Descrição"
+        },
+        "body": {
+          "label": "Conteúdo"
+        },
+        "navigationTitle": {
+          "label": "Título na navegação"
+        },
+        "navigationIcon": {
+          "label": "Ícone na navegação"
+        },
+        "navigationHidden": {
+          "label": "Ocultar da navegação"
+        },
+        "seoTitle": {
+          "label": "Título para SEO"
+        },
+        "seoDescription": {
+          "label": "Descrição para SEO"
+        }
+      }
+    },
+    "page": {
+      "label": "Página",
+      "labelPlural": "Páginas",
+      "fields": {
+        "title": {
+          "label": "Título"
+        },
+        "slug": {
+          "label": "Caminho",
+          "description": "O caminho do arquivo sem .md, por exemplo index. Um caminho novo move o arquivo."
+        },
+        "description": {
+          "label": "Descrição"
+        },
+        "body": {
+          "label": "Conteúdo"
+        },
+        "navigationTitle": {
+          "label": "Título na navegação"
+        },
+        "navigationIcon": {
+          "label": "Ícone na navegação"
+        },
+        "navigationHidden": {
+          "label": "Ocultar da navegação"
+        },
+        "seoTitle": {
+          "label": "Título para SEO"
+        },
+        "seoDescription": {
+          "label": "Descrição para SEO"
+        }
+      }
+    }
+  }
+}
