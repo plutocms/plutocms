@@ -28,3 +28,13 @@
 :root:not([data-pluto-admin]) {
   --ui-header-height: 4rem;
 }
+
+/*
+ * The site search gets the overlay of the admin palettes: darker, and it blurs the page under
+ * it. The overlay is the sibling just before the modal content, which carries `site-search`
+ * (AppShell.vue).
+ */
+[data-slot='overlay']:has(+ .site-search) {
+  background-color: oklch(13% 0.03 273 / 0.6);
+  backdrop-filter: blur(6px);
+}
