@@ -1,8 +1,8 @@
 <script setup lang="ts">
 // The hero illustration: the Pluto planet with its layers in orbit. Each ring
-// is a group of layers, from the closest (the building blocks) to the farthest
-// (the feature layers). The five moons of Pluto turn between the rings, from
-// the closest (Charon, the big one, with its red pole) to the farthest (Hydra).
+// is a group of layers, from the closest (the backend and the add-ons) to the
+// farthest (the feature layers). The five moons of Pluto turn between the rings,
+// from the closest (Charon, the big one, with its red pole) to the farthest (Hydra).
 interface Chip {
   label: string
   icon: string
@@ -10,13 +10,6 @@ interface Chip {
 }
 
 const rings: { size: number, duration: number, chips: Chip[] }[] = [
-  {
-    size: 50,
-    duration: 70,
-    chips: [
-      { label: 'utils', icon: 'i-lucide-wrench', angle: 200 }
-    ]
-  },
   {
     size: 74,
     duration: 100,
