@@ -96,8 +96,8 @@ export default defineNuxtConfig({
 
   eslint: {
     config: {
-      // The Pluto layer sets `standalone: false` and `sortConfigKeys` for apps
-      // that use the antfu config. This app has its own ESLint config.
+      // This app registers @nuxt/eslint itself (the Pluto layers do not) and
+      // has its own ESLint config.
       standalone: true,
       nuxt: {
         sortConfigKeys: false
