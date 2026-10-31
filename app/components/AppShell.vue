@@ -38,6 +38,11 @@ provide('navigation', navigation)
   <AppFooter />
 
   <ClientOnly>
-    <LazyUContentSearch :files="files" :navigation="navigation" />
+    <!-- `site-search` gets the darker, blurred overlay (main.css). -->
+    <LazyUContentSearch
+      :files="files"
+      :navigation="navigation"
+      :ui="{ modal: 'site-search' }"
+    />
   </ClientOnly>
 </template>
