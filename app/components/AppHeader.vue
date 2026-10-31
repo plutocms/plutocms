@@ -39,7 +39,7 @@ const sections = computed(() => [
     :to="header?.to || '/'"
     class="transition-[background-color,border-color,backdrop-filter] duration-200"
   >
-    <!-- The logo, then the sections, on the left. -->
+    <!-- The logo and the alpha badge, then the sections, on the left. -->
     <template #left>
       <ULink
         :to="header?.to || '/'"
@@ -47,8 +47,15 @@ const sections = computed(() => [
         aria-label="Pluto CMS"
         class="flex shrink-0"
       >
-        <PlutoLogo class="text-highlighted h-8 w-auto shrink-0" />
+        <PlutoLogo class="text-highlighted h-10 w-auto shrink-0" />
       </ULink>
+      <UBadge
+        label="alpha"
+        color="primary"
+        variant="subtle"
+        size="sm"
+        class="ms-2 shrink-0"
+      />
       <UNavigationMenu
         :items="sections"
         variant="link"
