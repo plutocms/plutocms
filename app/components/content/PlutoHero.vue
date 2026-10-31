@@ -1,4 +1,20 @@
 <script setup lang="ts">
+definePlutoBlock({
+  label: 'Hero',
+  icon: 'i-lucide-sparkles',
+  group: 'landing',
+  description: 'The big title at the top of the home page.',
+  slots: {
+    headline: { label: 'Small label', content: 'inline' },
+    title: { label: 'Title', content: 'inline' },
+    description: { label: 'Text', content: 'rich' },
+    links: { label: 'Buttons', content: 'blocks', accepts: ['u-button'] },
+    notice: { label: 'Notice', content: 'inline' }
+  },
+  insert:
+    '::pluto-hero\n#headline\nA small label\n\n#title\nYour title\n\n#description\nA short text about Pluto.\n::'
+})
+
 // The landing hero. The text comes from the slots of `::pluto-hero` in
 // content/index.md, so an editor can change it in the admin.
 </script>

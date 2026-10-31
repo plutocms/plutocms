@@ -1,4 +1,12 @@
 <script setup lang="ts">
+definePlutoBlock({
+  label: 'Color palette',
+  icon: 'i-lucide-palette',
+  group: 'site',
+  description: 'The color scales of Pluto. Used on the brand page.',
+  insert: '::pluto-palette\n::'
+})
+
 // The color scales of the Pluto palette, for the brand page.
 const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
 

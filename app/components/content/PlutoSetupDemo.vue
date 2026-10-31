@@ -1,4 +1,13 @@
 <script setup lang="ts">
+definePlutoBlock({
+  label: 'Setup demo',
+  icon: 'i-lucide-terminal',
+  group: 'landing',
+  description:
+    'A terminal runs create-pluto, and a browser shows the store, then the admin. It plays while it is on screen.',
+  insert: '::pluto-setup-demo\n::'
+})
+
 // The setup demo of the landing: a terminal runs `create-pluto`, and a browser next to it shows
 // the store, then the admin. It loops while it is on screen (see useDemoTimeline).
 const root = ref<HTMLElement | null>(null)

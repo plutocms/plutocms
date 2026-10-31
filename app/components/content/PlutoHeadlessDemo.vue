@@ -1,4 +1,13 @@
 <script setup lang="ts">
+definePlutoBlock({
+  label: 'Headless demo',
+  icon: 'i-lucide-plug',
+  group: 'landing',
+  description:
+    'A request to the public API in three stacks, and its JSON answer.',
+  insert: '::pluto-headless-demo\n::'
+})
+
 // The headless demo of the landing: a request in three stacks, and the JSON answer that streams
 // in, line by line, while the demo is on screen.
 const tabs = [

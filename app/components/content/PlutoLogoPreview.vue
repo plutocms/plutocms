@@ -1,4 +1,12 @@
 <script setup lang="ts">
+definePlutoBlock({
+  label: 'Logo on light and dark',
+  icon: 'i-lucide-image',
+  group: 'site',
+  description: 'The Pluto logo on a light and on a dark background.',
+  insert: '::pluto-logo-preview\n::'
+})
+
 // The logo on a light and on a dark background, for the brand page.
 </script>
 
