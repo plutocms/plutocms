@@ -23,7 +23,7 @@
     "@plutocms/core": "^0.40.0",
     "@plutocms/docs": "^0.16.0",
     "@takumi-rs/core": "^2.18.1",
-    "@vueuse/core": "^14.4.0",
+    "@vueuse/core": "^15.0.0",
     "nuxt": "^4.6.2",
     "nuxt-llms": "0.3.0",
     "nuxt-og-image": "^6.10.4",
