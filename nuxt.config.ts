@@ -5,7 +5,7 @@ import { plutoLayer } from '@plutocms/core/layers'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: [plutoLayer('@plutocms/nuxt-content')],
+  extends: [plutoLayer('@plutocms/docs')],
 
   modules: [
     '@nuxt/eslint',
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
    * The pages are Markdown files in the GitHub repository, edited in the admin
    * at /admin. The Pluto defaults cover the CMS: the local `content/` folder in
    * development, GitHub in production, and the repo from Vercel or the git
-   * remote. The nuxt-content layer sets `postType: false` and
+   * remote. The docs layer sets `postType: false` and
    * `commit.skipDeploy: false`, so an edit redeploys the site.
    */
 
@@ -59,7 +59,7 @@ export default defineNuxtConfig({
   // `render: 'hybrid'` is for testing and will go back to `'build'`. The pages are built with
   // the site, and the server reads a page from the repository only when its file changed
   // after the build. Hybrid mode needs a server, so the content pages are not prerendered.
-  plutoNuxtContent: {
+  plutoDocs: {
     types: [
       {
         preset: 'docs',

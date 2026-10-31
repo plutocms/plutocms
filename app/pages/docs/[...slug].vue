@@ -13,8 +13,8 @@ const { toc } = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 const routePath = computed(() => withoutTrailingSlash(route.path))
 
-// The page and the surround come from the nuxt-content layer, which reads them at build
-// time or at run time (plutoNuxtContent.render), so this page does not know the mode.
+// The page and the surround come from the docs layer, which reads them at build
+// time or at run time (plutoDocs.render), so this page does not know the mode.
 const { data: page } = await usePlutoContentPage(routePath, {
   collection: 'docs',
   type: 'doc'

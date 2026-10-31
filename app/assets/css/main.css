@@ -22,7 +22,7 @@
 /*
  * The public pages keep the 4rem header of the Nuxt UI Docs template. Pluto sets
  * `--ui-header-height: 2.5rem` for the admin. The admin bar keeps its own height in
- * `--pluto-admin-bar-height` (2.5rem). The nuxt-content layer adds the bar height to this
+ * `--pluto-admin-bar-height` (2.5rem). The docs layer adds the bar height to this
  * value while the admin bar shows on a public page.
  */
 :root:not([data-pluto-admin]) {
