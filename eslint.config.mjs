@@ -33,6 +33,8 @@ export default withNuxt(
             '^star-layer$',
             '^star$',
             '^pluto-header-offset$',
+            // The site search modal: main.css styles its overlay.
+            '^site-search$',
             // Scoped CSS classes of the landing and the 404 page.
             '^hero-sky$',
             // The animations of the landing demos.
