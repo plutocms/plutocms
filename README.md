@@ -4,7 +4,7 @@ The documentation site of [Pluto](https://github.com/plutocms/pluto):
 [pluto.vulmix.dev](https://pluto.vulmix.dev).
 
 The site runs on Pluto. The pages are Markdown files in `content/`, and we edit them in the Pluto
-admin at `/admin` ([@plutocms/nuxt-content](https://github.com/plutocms/nuxt-content)).
+admin at `/admin` ([@plutocms/docs](https://github.com/plutocms/docs)).
 
 ## Run it
 

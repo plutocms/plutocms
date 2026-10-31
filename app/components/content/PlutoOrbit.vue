@@ -22,7 +22,7 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
     duration: 100,
     chips: [
       { label: 'supabase', icon: 'i-simple-icons-supabase', angle: 110 },
-      { label: 'nuxt-content', icon: 'i-simple-icons-nuxt', angle: 300 }
+      { label: 'docs', icon: 'i-simple-icons-nuxt', angle: 300 }
     ]
   },
   {
