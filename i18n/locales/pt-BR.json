@@ -35,8 +35,8 @@
       }
     },
     "layer": {
-      "label": "Layer",
-      "labelPlural": "Layers",
+      "label": "Camada",
+      "labelPlural": "Camadas",
       "fields": {
         "title": {
           "label": "Título"

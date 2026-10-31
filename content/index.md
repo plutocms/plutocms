@@ -1,7 +1,7 @@
 ---
 seo:
   title: Pluto, a small CMS with a big heart
-  description: Pluto is a CMS that you build from Nuxt layers. Use it in your Nuxt app, or headless with any stack. Use it with no database, or with Supabase.
+  description: Pluto is a CMS that you build from Nuxt layers. Use it in your Nuxt app, or headless with any stack. Keep the content in Git, or add a backend layer with a database.
 ---
 
 ::pluto-hero
@@ -180,17 +180,17 @@ The public API gives your published content as JSON. Read it from Next.js, Astro
 
 ::u-page-section
 #title
-Two modes
+Your backend
 
 #description
-Pick the mode that fits your project.
+Keep the content in Git, or add a database. The admin is the same.
 
 #features
   :::u-page-card
   ---
   icon: lucide:github
   to: /docs/github-cms
-  title: Standalone mode
+  title: Content in Git
   ---
   Posts are Markdown files in Git. Each save is a commit: in your local repository out of the box, in GitHub on a deployed site. There is no database.
   :::
@@ -198,10 +198,10 @@ Pick the mode that fits your project.
   :::u-page-card
   ---
   icon: lucide:database
-  to: /docs/supabase
-  title: Supabase mode
+  to: /docs/getting-started/choose-a-backend
+  title: A backend layer
   ---
-  Supabase gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library.
+  A backend layer gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library. Supabase is the first backend layer.
   :::
 #headline
 ::
