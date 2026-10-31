@@ -1,4 +1,13 @@
 <script setup lang="ts">
+definePlutoBlock({
+  label: 'Layers demo',
+  icon: 'i-lucide-layers',
+  group: 'landing',
+  description:
+    'Pick layers, and the stack, the admin menu and the nuxt.config.ts change with them.',
+  insert: '::pluto-layers-demo\n::'
+})
+
 // The layers demo of the landing: pick layers, and the stack, the admin menu and the
 // `nuxt.config.ts` of the app change with them. It plays by itself while it is on screen, until
 // the visitor picks a layer.

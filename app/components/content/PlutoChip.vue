@@ -1,7 +1,21 @@
 <script setup lang="ts">
+definePlutoBlock<{ icon?: string, center?: boolean }>({
+  label: 'Chip',
+  icon: 'i-lucide-tag',
+  group: 'landing',
+  description: 'A short label above a section title.',
+  props: {
+    center: { label: 'Center the label' }
+  },
+  slots: { default: { label: 'Text', content: 'inline' } },
+  insert: '::pluto-chip{icon="i-lucide-heart"}\nA short label\n::'
+})
+
 // A small rounded label above a title: `::pluto-chip{icon="i-lucide-heart"}`.
 withDefaults(defineProps<{
+  /** The icon before the text, such as `i-lucide-heart`. */
   icon?: string
+  /** Put the label in the middle of the line. */
   center?: boolean
 }>(), {
   icon: undefined,
