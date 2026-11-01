@@ -13,7 +13,7 @@ export type LayerKind = keyof typeof LAYER_KINDS
 
 /** The backends a layer works with. */
 export const LAYER_BACKENDS: Record<string, { label: string; icon: string }> = {
-  github: { label: 'GitHub CMS', icon: 'i-simple-icons-github' },
+  git: { label: 'Git CMS', icon: 'i-simple-icons-git' },
   supabase: { label: 'Supabase', icon: 'i-simple-icons-supabase' }
 }
 

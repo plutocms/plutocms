@@ -34,7 +34,7 @@ export default defineContentConfig({
         // An Iconify name, for example `i-lucide-store`.
         icon: z.string(),
         kind: z.enum(['core', 'backend', 'feature', 'add-on', 'tooling']),
-        // The backends that the layer works with: `github` (the GitHub CMS), `supabase`.
+        // The backends that the layer works with: `git` (the Git CMS), `supabase`.
         backends: z.array(z.string()).default([]),
         // The layers that it extends (package names).
         extends: z.array(z.string()).default([]),

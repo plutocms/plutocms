@@ -34,6 +34,6 @@ usePlutoContentEditLink(page, 'page')
     v-if="page"
     :value="page"
     :prose="false"
-    :components="{ a: 'prose-a' }"
+    :components="{ a: 'prose-a', pre: 'prose-pre' }"
   />
 </template>

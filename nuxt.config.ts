@@ -133,10 +133,10 @@ export default defineNuxtConfig({
         ]
       },
       {
-        title: 'GitHub CMS',
+        title: 'Git CMS',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/docs/github-cms%' }
+          { field: 'path', operator: 'LIKE', value: '/docs/git-cms%' }
         ]
       },
       {

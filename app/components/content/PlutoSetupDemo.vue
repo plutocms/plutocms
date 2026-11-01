@@ -45,8 +45,8 @@ onMounted(() => {
 onBeforeUnmount(() => typing && clearInterval(typing))
 
 const questions = [
-  { label: 'Pick a template', answer: 'Shop' },
   { label: 'Pick a backend', answer: 'Supabase' },
+  { label: 'Pick a template', answer: 'Shop' },
   { label: 'Pick a package manager', answer: 'bun' }
 ]
 
@@ -61,9 +61,8 @@ const products = [
 ]
 
 const menu = [
-  { label: 'Dashboard', icon: 'i-lucide-layout-dashboard' },
+  { label: 'Home', icon: 'i-lucide-house' },
   { label: 'Products', icon: 'i-lucide-package' },
-  { label: 'Categories', icon: 'i-lucide-tags' },
   { label: 'Media', icon: 'i-lucide-images' },
   { label: 'Users', icon: 'i-lucide-users' },
   { label: 'Settings', icon: 'i-lucide-settings' }
