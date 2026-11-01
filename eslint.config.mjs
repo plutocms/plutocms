@@ -12,7 +12,7 @@ export default withNuxt(
         entryPoint: 'app/assets/css/main.css',
         // px arbitrary values become spacing steps (`h-[27px]` is `h-6.75`).
         rootFontSize: 16,
-        // Resolves `#build/pluto.css` (the Pluto layer CSS, with the Pluto UI tokens) in main.css.
+        // Resolves `@plutocms/css` (the Pluto layer CSS, with the Pluto UI tokens) in main.css: Nuxt writes the alias to the tsconfig paths.
         tsconfig: '.nuxt/tsconfig.app.json',
         attributes: [
           ...getDefaultAttributes(),

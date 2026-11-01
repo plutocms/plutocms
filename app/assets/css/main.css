@@ -1,13 +1,13 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 /* Every Pluto layer's CSS: the admin theme and the Pluto tokens. */
-@import '#build/pluto.css';
+@import '@plutocms/css';
 /*
  * The Pluto site theme of core: Public Sans and Fredoka, the light and dark shades of the
  * colors, the deep-space dark mode, the selection color and the page titles. The colors
  * (tholin, haze, kuiper) are in app.config.ts.
  */
-@import '#build/pluto-site.css';
+@import '@plutocms/css/site';
 
 @source '../../../content/**/*';
 
