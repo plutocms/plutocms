@@ -28,25 +28,19 @@ const LAYERS: DemoLayer[] = [
     label: 'Supabase',
     package: '@plutocms/supabase',
     icon: 'i-simple-icons-supabase',
-    menu: [
-      { label: 'Users', icon: 'i-lucide-users' },
-      { label: 'Roles', icon: 'i-lucide-shield-check' }
-    ]
+    menu: [{ label: 'Users', icon: 'i-lucide-users' }]
   },
   {
     id: 'shop',
-    label: 'Shop',
+    label: 'Shop (Supabase)',
     package: '@plutocms/supabase-shop',
     icon: 'i-lucide-store',
     needs: 'supabase',
-    menu: [
-      { label: 'Products', icon: 'i-lucide-package' },
-      { label: 'Categories', icon: 'i-lucide-tags' }
-    ]
+    menu: [{ label: 'Products', icon: 'i-lucide-package' }]
   },
   {
     id: 'blog',
-    label: 'Blog',
+    label: 'Blog (Supabase)',
     package: '@plutocms/supabase-blog',
     icon: 'i-lucide-newspaper',
     needs: 'supabase',
@@ -100,8 +94,8 @@ const stack = computed(() => LAYERS.filter((layer) => active.value.has(layer.id)
 const hasBackend = computed(() => active.value.has('supabase'))
 
 const menu = computed(() => {
-  const items = [{ label: 'Dashboard', icon: 'i-lucide-layout-dashboard', key: 'dashboard' }]
-  // Without a backend, core is the GitHub CMS: posts are Markdown files.
+  const items = [{ label: 'Home', icon: 'i-lucide-house', key: 'dashboard' }]
+  // Without a backend, core is the Git CMS: posts are Markdown files.
   if (!hasBackend.value) {
     items.push({ label: 'Posts', icon: 'i-lucide-file-text', key: 'github-posts' })
   }
@@ -184,8 +178,8 @@ const extendsList = computed(() => {
           <PlutoLogo class="h-4 w-auto" />
           <span class="text-kuiper-400">Admin</span>
           <UBadge
-            :label="hasBackend ? 'Supabase' : 'GitHub CMS'"
-            :icon="hasBackend ? 'i-simple-icons-supabase' : 'i-simple-icons-github'"
+            :label="hasBackend ? 'Supabase' : 'Git CMS'"
+            :icon="hasBackend ? 'i-simple-icons-supabase' : 'i-simple-icons-git'"
             color="neutral"
             variant="subtle"
             size="sm"

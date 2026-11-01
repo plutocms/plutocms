@@ -39,12 +39,15 @@ const usedBy = computed(() =>
   )
 )
 
-const managers = ['npm', 'pnpm', 'bun'] as const
+const managers = ['npm', 'pnpm', 'yarn', 'bun', 'deno'] as const
 const manager = ref<(typeof managers)[number]>('npm')
 const install = computed(() => {
   const name = page.value!.package
-  return manager.value === 'npm'
-    ? `npm install ${name}`
+  if (manager.value === 'npm') {
+    return `npm install ${name}`
+  }
+  return manager.value === 'deno'
+    ? `deno add npm:${name}`
     : `${manager.value} add ${name}`
 })
 const { copy, copied } = useClipboard()

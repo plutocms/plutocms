@@ -24,7 +24,7 @@ const rings: { size: number, duration: number, chips: Chip[] }[] = [
     chips: [
       { label: 'shop', icon: 'i-lucide-shopping-bag', angle: 60 },
       { label: 'blog', icon: 'i-lucide-pen-line', angle: 180 },
-      { label: 'storage', icon: 'i-lucide-images', angle: 290 }
+      { label: '3d', icon: 'i-lucide-box', angle: 290 }
     ]
   }
 ]

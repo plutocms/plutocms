@@ -36,15 +36,25 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
   :::
 
 #default
-  :::prose-pre
-  ---
-  code: |
-    bun create pluto@latest
-  filename: Terminal
-  ---
-
-  ```bash [Terminal]
+  :::code-group{sync="package-manager"}
+  ```bash [npm]
   npm create pluto@latest
+  ```
+
+  ```bash [pnpm]
+  pnpm create pluto@latest
+  ```
+
+  ```bash [yarn]
+  yarn create pluto
+  ```
+
+  ```bash [bun]
+  bun create pluto@latest
+  ```
+
+  ```bash [deno]
+  deno run -A npm:create-pluto@latest
   ```
   :::
 
@@ -62,7 +72,7 @@ Pluto is in alpha. Expect breaking changes until the first stable release.
 From zero to an admin in one command
 
 #description
-`create-pluto` asks three questions, downloads a template, and installs it. Start the dev server, and your site and its admin are ready.
+`create-pluto` asks a few questions, downloads a template, and installs it. Start the dev server, and your site and its admin are ready.
 
 #default
   :::pluto-setup-demo
@@ -188,8 +198,8 @@ Keep the content in Git, or add a database. The admin is the same.
 #features
   :::u-page-card
   ---
-  icon: lucide:github
-  to: /docs/github-cms
+  icon: i-simple-icons-git
+  to: /docs/git-cms
   title: Content in Git
   ---
   Posts are Markdown files in Git. Each save is a commit: in your local repository out of the box, in GitHub on a deployed site. There is no database.
