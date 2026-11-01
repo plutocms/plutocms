@@ -12,8 +12,8 @@
         "@nuxt/image": "^2.1.0",
         "@nuxt/ui": "^4.12.0",
         "@nuxtjs/mdc": "^0.23.2",
-        "@plutocms/core": "^0.43.0",
-        "@plutocms/docs": "^0.17.1",
+        "@plutocms/core": "^0.44.0",
+        "@plutocms/docs": "^0.19.0",
         "@takumi-rs/core": "^2.18.1",
         "@vueuse/core": "^14.4.0",
         "nuxt": "^4.6.2",
@@ -468,9 +468,9 @@
 
     "@pkgr/core": ["@pkgr/core@0.3.6", "", {}, "sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA=="],
 
-    "@plutocms/core": ["@plutocms/core@0.43.0", "", { "dependencies": { "@codemirror/commands": "^6.11.1", "@codemirror/lang-markdown": "^6.5.2", "@codemirror/language": "^6.13.1", "@codemirror/search": "^6.7.2", "@codemirror/state": "^6.7.6", "@codemirror/view": "^6.43.15", "@iconify-json/lucide": "^1.2.144", "@internationalized/date": "^3.12.4", "@lezer/highlight": "^1.2.5", "@nuxt/image": "^2.1.0", "@nuxt/ui": "^4.12.0", "@tanstack/charts": "^1.1.0", "@vueuse/nuxt": "^15.0.0", "image-meta": "^0.3.0", "marked": "^18.1.1", "reka-ui": "^2.11.0", "tailwind-merge": "^3.7.0", "ultrahtml": "^1.7.0", "yaml": "^2.9.1" } }, "sha512-StVoF8jcb4+VrLkG2aW1tcr3hioYyB5XepalIjn1kFyCFPTtP5e47AeRuiy2YBRJMXnEZZ0IGd450V+KOsyqbg=="],
+    "@plutocms/core": ["@plutocms/core@0.44.0", "", { "dependencies": { "@codemirror/commands": "^6.11.1", "@codemirror/lang-markdown": "^6.5.2", "@codemirror/language": "^6.13.1", "@codemirror/search": "^6.7.2", "@codemirror/state": "^6.7.6", "@codemirror/view": "^6.43.15", "@iconify-json/lucide": "^1.2.144", "@internationalized/date": "^3.12.4", "@lezer/highlight": "^1.2.5", "@nuxt/image": "^2.1.0", "@nuxt/ui": "^4.12.0", "@tanstack/charts": "^1.1.0", "@vueuse/nuxt": "^15.0.0", "image-meta": "^0.3.0", "marked": "^18.1.1", "reka-ui": "^2.11.0", "tailwind-merge": "^3.7.0", "ultrahtml": "^1.7.0", "yaml": "^2.9.1" } }, "sha512-RsWrw5hzbbnXzAZUGjxq8Kjcbk9GAMc/ttS7e1sQFRaVkGNbhzfb8FZVH/dUQM5q7k9A8v648UCTpfffWcvRLw=="],
 
-    "@plutocms/docs": ["@plutocms/docs@0.17.1", "", { "dependencies": { "@nuxt/content": "^3.16.2", "@nuxtjs/mdc": "^0.23.2", "@plutocms/core": ">=0.40.0 <1.0.0", "@types/sortablejs": "^1.15.9", "nuxt-component-meta": "0.18.0", "reka-ui": "^2.11.0", "remark-gfm": "4.0.1", "remark-mdc": "3.11.1", "remark-parse": "11.0.0", "sortablejs": "^1.15.7", "unified": "11.0.5", "yaml": "2.9.1" } }, "sha512-qtmhN1D8OFYy0V6o3l0duZ1PqQmpzYROEnkN000bmy9lgCmntZK88PL0XjTzUOckGpDXRTbJEB5NTMBwZY5JkA=="],
+    "@plutocms/docs": ["@plutocms/docs@0.19.0", "", { "dependencies": { "@nuxt/content": "^3.16.2", "@nuxtjs/mdc": "^0.23.2", "@plutocms/core": ">=0.40.0 <1.0.0", "@types/sortablejs": "^1.15.9", "nuxt-component-meta": "0.18.0", "reka-ui": "^2.11.0", "remark-gfm": "4.0.1", "remark-mdc": "3.11.1", "remark-parse": "11.0.0", "sortablejs": "^1.15.7", "unified": "11.0.5", "yaml": "2.9.1" } }, "sha512-nKFUT3n5unGBwsAo+ebBQDAIEKHc5aBmpEmAhvd3Fmf2nYO0VYLL4P5uFFt+i6vBHn4oha44mo6GoQknQ8w47A=="],
 
     "@polka/url": ["@polka/url@1.0.0-next.29", "", {}, "sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww=="],
 
