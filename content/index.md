@@ -17,7 +17,7 @@ Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add l
 #links
   :::u-button
   ---
-  to: /docs/getting-started
+  to: /docs/start-here
   size: xl
   trailing-icon: lucide:arrow-right
   ---
@@ -208,7 +208,7 @@ Keep the content in Git, or add a database. The admin is the same.
   :::u-page-card
   ---
   icon: lucide:database
-  to: /docs/getting-started/choose-a-backend
+  to: /docs/build/choose-a-backend
   title: A backend layer
   ---
   A backend layer gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library. Supabase is the first backend layer.
@@ -285,7 +285,7 @@ In 2006, Pluto lost its title of planet. It is smaller than our Moon. Then, in 2
   ---
   links:
     - label: Start building
-      to: '/docs/getting-started'
+      to: '/docs/start-here'
       trailingIcon: i-lucide-arrow-right
     - label: View on GitHub
       to: 'https://github.com/plutocms/pluto'

@@ -122,14 +122,14 @@ export default defineNuxtConfig({
         title: 'Getting Started',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/docs/getting-started%' }
+          { field: 'path', operator: 'LIKE', value: '/docs/start-here%' }
         ]
       },
       {
         title: 'Core',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/docs/core%' }
+          { field: 'path', operator: 'LIKE', value: '/docs/build%' }
         ]
       },
       {
@@ -157,7 +157,7 @@ export default defineNuxtConfig({
         title: 'Guides',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/docs/guides%' }
+          { field: 'path', operator: 'LIKE', value: '/docs/extend%' }
         ]
       },
       {

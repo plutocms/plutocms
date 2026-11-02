@@ -35,7 +35,7 @@ export default defineAppConfig({
     // The docs are a Nuxt Content site that Pluto edits. The link explains it.
     poweredBy: {
       label: 'These docs run on Pluto',
-      to: '/docs/getting-started/why-pluto#these-docs-run-on-pluto'
+      to: '/docs/start-here/why-pluto#these-docs-run-on-pluto'
     },
     colorMode: false,
     links: [

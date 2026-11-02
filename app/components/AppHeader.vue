@@ -17,7 +17,7 @@ const sections = computed(() => [
   {
     label: 'Docs',
     icon: 'i-lucide-book-open',
-    to: '/docs/getting-started',
+    to: '/docs/start-here',
     active: route.path.startsWith('/docs')
   },
   {

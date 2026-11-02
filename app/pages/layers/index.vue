@@ -135,7 +135,7 @@ defineOgImage('Docs', { title, description, headline: 'Pluto' })
         :links="[
           {
             label: 'Create a layer',
-            to: '/docs/guides/create-a-layer',
+            to: '/docs/extend/create-a-layer',
             trailingIcon: 'i-lucide-arrow-right'
           }
         ]"
