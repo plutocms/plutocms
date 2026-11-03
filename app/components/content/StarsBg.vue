@@ -10,7 +10,10 @@ const props = withDefaults(defineProps<{
   color?: string
   speed?: 'slow' | 'normal' | 'fast'
   size?: { min: number, max: number }
+  /** Stay fixed to the viewport while the page scrolls, instead of filling the parent. */
+  fixed?: boolean
 }>(), {
+  fixed: false,
   starCount: 300,
   color: 'var(--ui-primary)',
   speed: 'normal',
@@ -56,7 +59,10 @@ const starLayers = computed(() => [
 </script>
 
 <template>
-  <div class="absolute pointer-events-none z-[-1] inset-y-0 inset-x-5 sm:inset-x-7 lg:inset-x-9 overflow-hidden">
+  <div
+    :class="fixed ? 'fixed' : 'absolute'"
+    class="pointer-events-none z-[-1] inset-y-0 inset-x-5 sm:inset-x-7 lg:inset-x-9 overflow-hidden"
+  >
     <svg
       class="absolute inset-0 pointer-events-none"
       viewBox="0 0 1017 181"

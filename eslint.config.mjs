@@ -36,9 +36,11 @@ export default withNuxt(
             // The site search modal: main.css styles its overlay.
             '^site-search$',
             // Scoped CSS classes of the landing and the 404 page.
-            '^hero-sky$',
-            // The animations of the landing demos.
-            '^demo-(line|pop|slide|json)$',
+            '^hero-(sky|in|install|orbit-in)$',
+            // The home page: landing.css gives it the dividers and the scroll reveal.
+            '^landing$',
+            // The landing demos: their animations, the stage and the window frame.
+            '^demo-[a-z-]+$',
             '^pluto-orbit$',
             '^orbit-ring$',
             '^orbit-chip$',
