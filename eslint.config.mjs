@@ -39,8 +39,8 @@ export default withNuxt(
             '^hero-(sky|in|install|orbit-in)$',
             // The home page: landing.css gives it the dividers and the scroll reveal.
             '^landing$',
-            // The animations of the landing demos.
-            '^demo-(line|pop|slide|json)$',
+            // The landing demos: their animations, the stage and the window frame.
+            '^demo-[a-z-]+$',
             '^pluto-orbit$',
             '^orbit-ring$',
             '^orbit-chip$',

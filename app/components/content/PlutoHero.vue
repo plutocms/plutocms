@@ -22,10 +22,12 @@ definePlutoBlock({
 <template>
   <!-- The hero starts under the site header, so its sky shows behind the clear header (AppHeader). -->
   <section class="relative isolate -mt-(--pluto-site-header-height) overflow-hidden pt-(--pluto-site-header-height)">
-    <!-- Light mode: a warm sky with the cream of the heart. Dark mode: space. -->
-    <div class="hero-sky absolute inset-0 -z-10" />
+    <!-- Light mode: a warm sky with the cream of the heart. Dark mode: space. The sky and the stars
+         stay fixed to the viewport while the page scrolls; the planet and its haze scroll with it. -->
+    <div class="hero-sky fixed inset-0 -z-10" />
     <StarsBg
       class="hidden dark:block"
+      fixed
       color="var(--color-heart-200)"
       :star-count="160"
       speed="slow"
