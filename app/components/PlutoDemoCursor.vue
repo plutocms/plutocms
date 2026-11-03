@@ -40,7 +40,7 @@ defineProps<{
     </svg>
     <span
       v-else
-      class="demo-cursor-beam bg-(--ui-text-highlighted) block h-4 w-0.5 -translate-y-1/2"
+      class="demo-cursor-beam block h-4 w-0.5 -translate-y-1/2 bg-(--ui-text-highlighted)"
     />
   </div>
 </template>

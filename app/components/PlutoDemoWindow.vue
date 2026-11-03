@@ -56,7 +56,7 @@ withDefaults(
           <span data-demo-target="url" class="truncate">{{ url }}</span>
           <span
             v-if="caret"
-            class="demo-caret bg-(--ui-text-highlighted) -ml-1 inline-block h-3.5 w-px shrink-0 align-middle"
+            class="demo-caret -ml-1 inline-block h-3.5 w-px shrink-0 bg-(--ui-text-highlighted) align-middle"
           />
         </div>
         <span

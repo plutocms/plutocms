@@ -236,7 +236,6 @@ const tiles = computed(() => {
           :aria-pressed="active.has(layer.id)"
           :variant="active.has(layer.id) ? 'solid' : 'outline'"
           :color="active.has(layer.id) ? 'primary' : 'neutral'"
-          :class="active.has(layer.id) ? 'text-white' : ''"
           :data-demo-target="`layer-${layer.id}`"
           class="rounded-full"
           @click="toggle(layer)"
@@ -325,11 +324,11 @@ const tiles = computed(() => {
 
       <PlutoDemoWindow dark title="nuxt.config.ts" icon="i-simple-icons-nuxt" class="h-56">
         <pre
-          class="text-kuiper-200 relative overflow-hidden p-4 font-mono text-[13px]/6"
-        ><span class="text-haze-300">export default</span> <span class="text-heart-100">defineNuxtConfig</span>({
-  <span class="text-kuiper-300">extends</span>: [
-<TransitionGroup name="demo-config"><span v-for="name in extendsList" :key="name" class="block">    <span class="text-heart-200">'{{ name }}'</span>,</span></TransitionGroup>  ]
-})</pre>
+          class="text-(--demo-fg) relative overflow-hidden p-4 font-mono text-[13px]/6"
+        ><span class="text-(--demo-storage)">export default</span> <span class="text-(--demo-fn)">defineNuxtConfig</span><span class="text-(--demo-punct)">({</span>
+  <span class="text-(--demo-key)">extends</span><span class="text-(--demo-punct)">: [</span>
+<TransitionGroup name="demo-config"><span v-for="name in extendsList" :key="name" class="block">    <span class="text-(--demo-string)">'{{ name }}'</span><span class="text-(--demo-punct)">,</span></span></TransitionGroup><span class="text-(--demo-punct)">  ]
+})</span></pre>
       </PlutoDemoWindow>
     </PlutoDemoStage>
   </div>

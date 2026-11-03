@@ -90,7 +90,7 @@ const list = computed(() =>
       <span class="ms-auto flex items-center gap-2">
         <UIcon name="i-lucide-moon" class="size-3.5" />
         <span
-          class="bg-primary flex size-5 items-center justify-center rounded-full text-white"
+          class="bg-primary text-inverted flex size-5 items-center justify-center rounded-full"
         >
           <UIcon name="i-lucide-user-round" class="size-3" />
         </span>
@@ -154,7 +154,7 @@ const list = computed(() =>
             </span>
           </div>
           <span
-            class="bg-primary flex shrink-0 items-center gap-1 rounded-md px-2 py-1 text-[10px] font-semibold text-white"
+            class="bg-primary text-inverted flex shrink-0 items-center gap-1 rounded-md px-2 py-1 text-[10px] font-semibold"
           >
             <UIcon name="i-lucide-plus" class="size-3" />
             New {{ create }}

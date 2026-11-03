@@ -1,29 +1,11 @@
 /*
  * The home page (pages/index.vue renders content/index.md with the class `landing`).
  *
- * Each `::u-page-section` is `section > container > [header, body]`. Two touches, in the spirit
- * of the big product sites: a hairline between two sections, and each part of a section rises
- * into place as it scrolls into view. The reveal is a scroll-driven animation, so it costs no
+ * Each `::u-page-section` is `section > container > [header, body]`. Each part of a section rises
+ * into place as it scrolls into view, in the spirit of the big product sites. The reveal is a scroll-driven animation, so it costs no
  * script: a browser without `animation-timeline` shows the page still, and so does a reader who
  * prefers reduced motion.
  */
-.landing section + section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: min(100% - 2rem, 72rem);
-  height: 1px;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--ui-border-accented) 20%,
-    var(--ui-border-accented) 80%,
-    transparent
-  );
-  pointer-events: none;
-}
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -45,4 +27,20 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/*
+ * The code of the demos uses the colors of the Material Theme, the dark theme of the code blocks
+ * of the docs (Shiki `material-theme`): storage (const, export), control keywords (await, from),
+ * functions, strings, numbers, punctuation, object keys, and plain text.
+ */
+.landing {
+  --demo-storage: #c792ea;
+  --demo-keyword: #89ddff;
+  --demo-fn: #82aaff;
+  --demo-string: #c3e88d;
+  --demo-number: #f78c6c;
+  --demo-punct: #89ddff;
+  --demo-key: #f07178;
+  --demo-fg: #eeffff;
 }

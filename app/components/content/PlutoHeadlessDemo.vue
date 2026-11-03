@@ -89,10 +89,10 @@ function tokenize(line: string): Token[] {
 }
 const colored = answer.map(tokenize)
 const TOKEN_CLASS: Record<Token['kind'], string> = {
-  key: 'text-haze-300',
-  string: 'text-heart-200',
-  number: 'text-tholin-300',
-  plain: 'text-kuiper-400'
+  key: 'text-(--demo-key)',
+  string: 'text-(--demo-string)',
+  number: 'text-(--demo-number)',
+  plain: 'text-(--demo-punct)'
 }
 
 /**
@@ -100,10 +100,22 @@ const TOKEN_CLASS: Record<Token['kind'], string> = {
  * shell), a number, and the rest. The three snippets are fixed, so a small tokenizer is enough.
  */
 type CodeToken = {
-  kind: 'keyword' | 'call' | 'string' | 'number' | 'plain'
+  kind: 'storage' | 'keyword' | 'call' | 'string' | 'number' | 'plain'
   text: string
 }
-const KEYWORDS = new Set(['const', 'await', 'async', 'import', 'from', 'export', 'return'])
+/** `const` and friends are storage words; `await` and friends are control words. */
+const STORAGE = new Set(['const', 'let', 'export', 'import', 'default'])
+const KEYWORDS = new Set(['await', 'async', 'from', 'return'])
+function wordKind(word: string, call: boolean): CodeToken['kind'] {
+  if (STORAGE.has(word)) {
+    return 'storage'
+  }
+  if (KEYWORDS.has(word)) {
+    return 'keyword'
+  }
+  // A shell command (curl) reads like a call.
+  return call || word === 'curl' ? 'call' : 'plain'
+}
 function tokenizeCode(line: string): CodeToken[] {
   const tokens: CodeToken[] = []
   const pattern = /('(?:[^'\\]|\\.)*')|(https?:\/\/\S+)|(\d+)|([A-Za-z_$][\w$]*)(?=\s*\()|([A-Za-z_$][\w$]*)/g
@@ -118,11 +130,11 @@ function tokenizeCode(line: string): CodeToken[] {
     } else if (match[3]) {
       tokens.push({ kind: 'number', text: match[0] })
     } else if (match[4]) {
-      tokens.push({ kind: KEYWORDS.has(match[4]) ? 'keyword' : 'call', text: match[0] })
+      tokens.push({ kind: wordKind(match[4], true), text: match[0] })
     } else {
       // A shell command (curl) reads like a call.
       tokens.push({
-        kind: KEYWORDS.has(match[5]!) ? 'keyword' : match[5] === 'curl' ? 'call' : 'plain',
+        kind: wordKind(match[5]!, false),
         text: match[0]
       })
     }
@@ -134,11 +146,12 @@ function tokenizeCode(line: string): CodeToken[] {
   return tokens
 }
 const CODE_CLASS: Record<CodeToken['kind'], string> = {
-  keyword: 'text-haze-300',
-  call: 'text-heart-100',
-  string: 'text-heart-200',
-  number: 'text-tholin-300',
-  plain: 'text-kuiper-200'
+  storage: 'text-(--demo-storage)',
+  keyword: 'text-(--demo-keyword)',
+  call: 'text-(--demo-fn)',
+  string: 'text-(--demo-string)',
+  number: 'text-(--demo-number)',
+  plain: 'text-(--demo-fg)'
 }
 const request = computed(() => current.value.code.split('\n').map(tokenizeCode))
 
@@ -185,7 +198,7 @@ const done = computed(() => shown.value >= answer.length)
             </template>
             <!-- A long URL wraps on a phone, so the window never scrolls sideways. -->
             <pre
-              class="text-kuiper-200 p-4 font-mono text-[13px]/6 wrap-anywhere whitespace-pre-wrap"
+              class="text-(--demo-fg) p-4 font-mono text-[13px]/6 wrap-anywhere whitespace-pre-wrap"
             ><span v-for="(line, index) in request" :key="index" class="block"><span
                   v-for="(part, partIndex) in line"
                   :key="partIndex"
@@ -256,7 +269,7 @@ const done = computed(() => shown.value >= answer.length)
             </Transition>
           </template>
           <pre
-            class="text-kuiper-200 h-full overflow-hidden p-4 font-mono text-[13px]/6"
+            class="text-(--demo-fg) h-full overflow-hidden p-4 font-mono text-[13px]/6"
             aria-label="The JSON answer of the public API"
           ><span
               v-for="(line, index) in colored.slice(0, shown)"
