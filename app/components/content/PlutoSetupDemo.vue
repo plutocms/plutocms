@@ -67,18 +67,36 @@ const menu = [
   { label: 'Users', icon: 'i-lucide-users' },
   { label: 'Settings', icon: 'i-lucide-settings' }
 ]
+
+// The stages of the loop, under the demo. `from` is the first step of a stage.
+const stages = [
+  { label: 'One command', icon: 'i-lucide-terminal', from: 0 },
+  { label: 'Three questions', icon: 'i-lucide-message-circle-question-mark', from: 1 },
+  { label: 'Installed', icon: 'i-lucide-package-check', from: 4 },
+  { label: 'Your site', icon: 'i-lucide-globe', from: 7 },
+  { label: 'Your admin', icon: 'i-lucide-layout-dashboard', from: 8 }
+]
+const stage = computed(() => {
+  let current = 0
+  stages.forEach((item, index) => {
+    if (step.value >= item.from) {
+      current = index
+    }
+  })
+  return current
+})
 </script>
 
 <template>
+  <div ref="root" class="flex flex-col gap-8">
   <div
-    ref="root"
     class="grid items-stretch gap-6 lg:grid-cols-2"
     aria-label="A terminal creates a Pluto shop project, then a browser shows the store and its admin."
     role="img"
   >
     <!-- The terminal -->
     <div
-      class="bg-kuiper-950 ring-kuiper-800 flex min-h-80 flex-col overflow-hidden rounded-xl font-mono text-[13px]/6 shadow-xl ring"
+      class="bg-kuiper-950 ring-kuiper-800 flex min-h-64 flex-col overflow-hidden rounded-xl font-mono text-[13px]/6 shadow-xl ring lg:min-h-80"
     >
       <div class="border-kuiper-800 flex items-center gap-2 border-b px-4 py-2.5">
         <span class="bg-kuiper-700 size-2.5 rounded-full" />
@@ -121,7 +139,7 @@ const menu = [
 
     <!-- The browser -->
     <div
-      class="bg-default ring-default flex min-h-80 flex-col overflow-hidden rounded-xl shadow-xl ring"
+      class="bg-default ring-default flex min-h-64 flex-col overflow-hidden rounded-xl shadow-xl ring lg:min-h-80"
     >
       <div class="border-default bg-elevated/60 flex items-center gap-3 border-b px-4 py-2.5">
         <div class="flex gap-1.5">
@@ -229,6 +247,42 @@ const menu = [
         </Transition>
       </div>
     </div>
+  </div>
+
+    <!-- The stages of the loop. The one that plays is lit; the ones before it are done. -->
+    <ol
+      class="flex flex-wrap items-center justify-center gap-x-2 gap-y-3 text-sm"
+      aria-label="The stages of the setup"
+    >
+      <li
+        v-for="(item, index) in stages"
+        :key="item.label"
+        class="flex items-center gap-2"
+      >
+        <span
+          :class="
+            index === stage
+              ? 'bg-primary/10 text-primary ring-primary/30'
+              : index < stage
+                ? 'text-highlighted ring-default'
+                : 'text-dimmed ring-default/60'
+          "
+          :aria-current="index === stage ? 'step' : undefined"
+          class="flex items-center gap-1.5 rounded-full px-3 py-1 font-medium ring transition-colors duration-300"
+        >
+          <UIcon
+            :name="index < stage ? 'i-lucide-check' : item.icon"
+            class="size-4"
+          />
+          {{ item.label }}
+        </span>
+        <UIcon
+          v-if="index < stages.length - 1"
+          name="i-lucide-chevron-right"
+          class="text-dimmed hidden size-3.5 sm:block"
+        />
+      </li>
+    </ol>
   </div>
 </template>
 

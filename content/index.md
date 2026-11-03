@@ -195,25 +195,27 @@ Your backend
 #description
 Keep the content in Git, or add a database. The admin is the same.
 
-#features
-  :::u-page-card
-  ---
-  icon: i-simple-icons-git
-  to: /docs/git-cms
-  title: Content in Git
-  ---
-  Posts are Markdown files in Git. Each save is a commit: in your local repository out of the box, in GitHub on a deployed site. There is no database.
-  :::
+#default
+  :::div{class="mx-auto grid w-full max-w-4xl gap-6 sm:grid-cols-2"}
+    ::::u-page-card
+    ---
+    icon: i-simple-icons-git
+    to: /docs/git-cms
+    title: Content in Git
+    ---
+    Posts are Markdown files in Git. Each save is a commit: in your local repository out of the box, in GitHub on a deployed site. There is no database.
+    ::::
 
-  :::u-page-card
-  ---
-  icon: lucide:database
-  to: /docs/build/choose-a-backend
-  title: A backend layer
-  ---
-  A backend layer gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library. Supabase is the first backend layer.
+    ::::u-page-card
+    ---
+    icon: lucide:database
+    to: /docs/build/choose-a-backend
+    title: A backend layer
+    ---
+    A backend layer gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library. Supabase is the first backend layer.
+    ::::
+
   :::
-#headline
 ::
 
 ::u-page-section

@@ -32,7 +32,8 @@ definePlutoBlock({
     />
 
     <UContainer class="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.1fr_1fr] lg:py-28">
-      <div class="flex flex-col items-start gap-6">
+      <!-- `min-w-0`: the tabs of the install box must not set the width of the column on a phone. -->
+      <div class="hero-in flex min-w-0 flex-col items-start gap-6">
         <PlutoChip
           v-if="$slots.headline"
           icon="i-lucide-heart"
@@ -61,7 +62,7 @@ definePlutoBlock({
           <slot name="links" />
         </div>
 
-        <div class="w-full max-w-md">
+        <div class="hero-install w-full min-w-0 max-w-md">
           <slot />
         </div>
 
@@ -82,12 +83,69 @@ definePlutoBlock({
         </p>
       </div>
 
-      <PlutoOrbit class="max-w-sm sm:max-w-md lg:max-w-none" />
+      <!-- The side padding keeps the outer chips of the orbit on the screen of a phone. -->
+      <div class="hero-orbit-in w-full px-8 sm:px-0">
+        <PlutoOrbit class="max-w-sm sm:max-w-md lg:max-w-none" />
+      </div>
     </UContainer>
   </section>
 </template>
 
 <style scoped>
+/*
+ * The tabs of the install box (npm, pnpm, …) scroll on a narrow screen, and the row keeps room on
+ * the right for the copy button, which sits over the end of the row.
+ */
+.hero-install :deep([role='tablist']) {
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-right: 3rem;
+}
+/* On a phone the tabs fill the row, so the copy button moves down, to the end of the command. */
+@media (width < 40rem) {
+  .hero-install :deep([role='tablist']) {
+    padding-right: 0.5rem;
+  }
+  .hero-install :deep(div:has(> pre) > button) {
+    top: auto;
+    bottom: 0.6rem;
+  }
+}
+
+/* The text comes in one line after the other, and the orbit fades in behind it. */
+.hero-in > * {
+  animation: hero-rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--hero-step) * 90ms);
+}
+.hero-in > :nth-child(1) { --hero-step: 0; }
+.hero-in > :nth-child(2) { --hero-step: 1; }
+.hero-in > :nth-child(3) { --hero-step: 2; }
+.hero-in > :nth-child(4) { --hero-step: 3; }
+.hero-in > :nth-child(5) { --hero-step: 4; }
+.hero-in > :nth-child(6) { --hero-step: 5; }
+.hero-orbit-in {
+  animation: hero-fade 1.2s ease-out both;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-in > *,
+  .hero-orbit-in {
+    animation: none;
+  }
+}
+
 .hero-sky {
   background:
     radial-gradient(60rem 40rem at 85% -10%, var(--color-heart-100), transparent 70%),

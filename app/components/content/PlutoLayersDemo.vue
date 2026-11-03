@@ -169,6 +169,14 @@ const extendsList = computed(() => {
           <span class="text-muted ms-auto font-mono text-xs">@plutocms/core</span>
         </div>
       </div>
+
+      <p class="text-muted flex items-start gap-2 text-sm">
+        <UIcon name="i-lucide-info" class="mt-0.5 size-4 shrink-0" />
+        <span>
+          A layer brings the layers it needs: the shop brings Supabase. Your app extends only the
+          top ones, and the admin grows with them.
+        </span>
+      </p>
     </div>
 
     <!-- The admin and the config -->
@@ -226,10 +234,9 @@ const extendsList = computed(() => {
         <div class="border-kuiper-800 text-kuiper-400 border-b px-4 py-2 text-xs">
           nuxt.config.ts
         </div>
-        <pre class="text-kuiper-200 overflow-x-auto p-4"><span class="text-haze-300">export default</span> defineNuxtConfig({
+        <pre class="text-kuiper-200 relative overflow-x-auto p-4"><span class="text-haze-300">export default</span> defineNuxtConfig({
   extends: [
-<template v-for="name in extendsList" :key="name">    <span class="text-heart-200">'{{ name }}'</span>,
-</template>  ]
+<TransitionGroup name="demo-config"><span v-for="name in extendsList" :key="name" class="block">    <span class="text-heart-200">'{{ name }}'</span>,</span></TransitionGroup>  ]
 })</pre>
       </div>
     </div>
@@ -259,13 +266,27 @@ const extendsList = computed(() => {
   opacity: 0;
   transform: translateX(-10px);
 }
+/* A line of the config fades in or out in place. A line that leaves stays out of the flow. */
+.demo-config-enter-active,
+.demo-config-leave-active {
+  transition: opacity 0.3s ease;
+}
+.demo-config-leave-active {
+  position: absolute;
+}
+.demo-config-enter-from,
+.demo-config-leave-to {
+  opacity: 0;
+}
 @media (prefers-reduced-motion: reduce) {
   .demo-stack-enter-active,
   .demo-stack-leave-active,
   .demo-menu-enter-active,
   .demo-menu-leave-active,
   .demo-stack-move,
-  .demo-menu-move {
+  .demo-menu-move,
+  .demo-config-enter-active,
+  .demo-config-leave-active {
     transition: none;
   }
 }

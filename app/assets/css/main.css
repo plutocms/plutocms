@@ -8,6 +8,8 @@
  * (tholin, haze, kuiper) are in app.config.ts.
  */
 @import '@plutocms/css/site';
+/* The home page: the dividers and the scroll reveal of its sections. */
+@import './landing.css';
 
 @source '../../../content/**/*';
 

@@ -58,6 +58,54 @@ const answer = `{
 const tab = ref('fetch')
 const current = computed(() => tabs.find((item) => item.value === tab.value)!)
 
+/**
+ * A line of JSON as colored tokens: a key, a string, a number, and the rest (punctuation). The
+ * answer is a fixed text, so a small tokenizer is enough.
+ */
+type Token = { kind: 'key' | 'string' | 'number' | 'plain', text: string }
+function tokenize(line: string): Token[] {
+  const tokens: Token[] = []
+  const pattern = /("(?:[^"\\]|\\.)*")(\s*:)?|(-?\d+(?:\.\d+)?)/g
+  let last = 0
+  for (const match of line.matchAll(pattern)) {
+    const index = match.index ?? 0
+    if (index > last) {
+      tokens.push({ kind: 'plain', text: line.slice(last, index) })
+    }
+    if (match[1]) {
+      tokens.push({ kind: match[2] ? 'key' : 'string', text: match[1] })
+      if (match[2]) {
+        tokens.push({ kind: 'plain', text: match[2] })
+      }
+    } else {
+      tokens.push({ kind: 'number', text: match[3]! })
+    }
+    last = index + match[0].length
+  }
+  if (last < line.length) {
+    tokens.push({ kind: 'plain', text: line.slice(last) })
+  }
+  return tokens
+}
+const colored = answer.map(tokenize)
+const TOKEN_CLASS: Record<Token['kind'], string> = {
+  key: 'text-haze-300',
+  string: 'text-heart-200',
+  number: 'text-tholin-300',
+  plain: 'text-kuiper-400'
+}
+
+/** The same colors for the request: the strings only. */
+const request = computed(() =>
+  current.value.code.split('\n').map((line) => {
+    const parts = line.split(/('[^']*')/)
+    return parts.map((text, index) => ({
+      text,
+      string: index % 2 === 1
+    }))
+  })
+)
+
 const root = ref<HTMLElement | null>(null)
 // One step for each line of the answer, then a pause.
 const { step, reduced } = useDemoTimeline(root, [
@@ -71,7 +119,8 @@ const shown = computed(() =>
 </script>
 
 <template>
-  <div ref="root" class="grid gap-4 lg:grid-cols-2">
+  <div ref="root" class="grid gap-4 lg:grid-cols-2 lg:items-start">
+    <div class="flex flex-col gap-4">
     <div
       class="bg-kuiper-950 ring-kuiper-800 flex flex-col overflow-hidden rounded-xl ring"
     >
@@ -94,9 +143,36 @@ const shown = computed(() =>
           {{ item.label }}
         </button>
       </div>
+      <!-- A long URL wraps on a phone, so the card never scrolls sideways. -->
       <pre
-        class="text-kuiper-200 flex-1 overflow-x-auto p-4 font-mono text-[13px]/6"
-      >{{ current.code }}</pre>
+        class="text-kuiper-200 p-4 font-mono text-[13px]/6 wrap-anywhere whitespace-pre-wrap"
+      ><span v-for="(line, index) in request" :key="index" class="block"><span
+            v-for="(part, partIndex) in line"
+            :key="partIndex"
+            :class="part.string ? 'text-heart-200' : ''"
+          >{{ part.text }}</span></span></pre>
+    </div>
+
+      <!-- What the API gives, in three lines. -->
+      <ul class="text-muted flex flex-col gap-2 text-sm">
+        <li class="flex items-start gap-2">
+          <UIcon name="i-lucide-eye" class="text-primary mt-0.5 size-4 shrink-0" />
+          Published content only. Drafts never leave the admin.
+        </li>
+        <li class="flex items-start gap-2">
+          <UIcon name="i-lucide-braces" class="text-primary mt-0.5 size-4 shrink-0" />
+          The same JSON for every content type: a list with a total, or one item.
+        </li>
+        <li class="flex items-start gap-2">
+          <UIcon name="i-lucide-book-open" class="text-primary mt-0.5 size-4 shrink-0" />
+          <span>
+            <ULink to="/docs/build/public-api" class="text-primary">
+              Read the public API reference
+            </ULink>
+            for the filters, the sort and the search.
+          </span>
+        </li>
+      </ul>
     </div>
 
     <div
@@ -110,12 +186,19 @@ const shown = computed(() =>
         200 OK · application/json
       </div>
       <pre
-        class="text-heart-100 min-h-96 overflow-x-auto p-4 font-mono text-[13px]/6"
+        class="text-kuiper-200 min-h-96 overflow-x-auto p-4 font-mono text-[13px]/6"
       ><span
-          v-for="(line, index) in answer.slice(0, shown)"
+          v-for="(line, index) in colored.slice(0, shown)"
           :key="index"
           class="demo-json block"
-        >{{ line }}</span></pre>
+        ><span
+            v-for="(token, tokenIndex) in line"
+            :key="tokenIndex"
+            :class="TOKEN_CLASS[token.kind]"
+          >{{ token.text }}</span></span><span
+          v-if="shown < answer.length && !reduced"
+          class="bg-kuiper-400 ms-px inline-block h-4 w-2 animate-pulse align-middle"
+        /></pre>
     </div>
   </div>
 </template>

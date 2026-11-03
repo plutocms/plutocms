@@ -1,0 +1,48 @@
+/*
+ * The home page (pages/index.vue renders content/index.md with the class `landing`).
+ *
+ * Each `::u-page-section` is `section > container > [header, body]`. Two touches, in the spirit
+ * of the big product sites: a hairline between two sections, and each part of a section rises
+ * into place as it scrolls into view. The reveal is a scroll-driven animation, so it costs no
+ * script: a browser without `animation-timeline` shows the page still, and so does a reader who
+ * prefers reduced motion.
+ */
+.landing section + section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100% - 2rem, 72rem);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ui-border-accented) 20%,
+    var(--ui-border-accented) 80%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .landing section + section > div > * {
+      animation: landing-rise linear both;
+      animation-timeline: view();
+      /* From the top of the part at the bottom edge, over the first fifth of its travel. */
+      animation-range: cover 0% cover 18%;
+    }
+  }
+}
+
+@keyframes landing-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
