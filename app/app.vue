@@ -11,18 +11,21 @@ const isAdmin = computed(
 // The preview page of the visual editor (an iframe in the admin) has no header, footer or search.
 const isPreview = computed(() => isPlutoPreviewPath(route.path))
 
+// The base path of the site: `/`, or `/<repository>/` on GitHub Pages. A head link gets no base by itself.
+const base = useRuntimeConfig().app.baseURL
+
 useHead({
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [
     // The Pluto icons come from the Pluto layer (pluto/public/img).
-    { rel: 'icon', href: '/img/pluto-icon.svg', type: 'image/svg+xml' },
+    { rel: 'icon', href: `${base}img/pluto-icon.svg`, type: 'image/svg+xml' },
     {
       rel: 'icon',
-      href: '/img/pluto-icon.png',
+      href: `${base}img/pluto-icon.png`,
       type: 'image/png',
       sizes: '96x96'
     },
-    { rel: 'apple-touch-icon', href: '/img/pluto-icon.png' }
+    { rel: 'apple-touch-icon', href: `${base}img/pluto-icon.png` }
   ],
   htmlAttrs: {
     lang: 'en'
