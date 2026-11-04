@@ -126,7 +126,7 @@ const questions = [
   { label: 'Pick a backend.', answer: 'Git CMS (Markdown files in Git)' },
   {
     label: 'Select a template to use. You can add more layers as needed.',
-    answer: 'Blog'
+    answer: 'Blog (minimalist)'
   },
   { label: 'Which package manager do you want to use?', answer: 'bun' }
 ]
@@ -230,7 +230,7 @@ const stage = computed(() => {
               <span v-if="step < 6">Downloading Pluto template...</span>
               <span v-else>
                 Template downloaded from
-                <span class="text-emerald-400">gh:plutocms/pluto-blog-template</span>
+                <span class="text-emerald-400">gh:plutocms/templates/templates/blog</span>
               </span>
             </p>
             <p v-if="step > 5" class="demo-line flex items-center">
