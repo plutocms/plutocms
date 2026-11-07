@@ -72,7 +72,7 @@ Pluto is in alpha. Expect breaking changes until the first stable release.
 From zero to an admin in one command
 
 #description
-`create-pluto` asks a few questions, downloads a template, and installs it. Start the dev server, and your site and its admin are ready.
+`create-pluto` asks a few questions, downloads a template, and installs it. Start the dev server, and your site and its admin are ready. To see each template first, or to deploy one with no command, open the [templates store](/templates).
 
 #default
   :::pluto-setup-demo

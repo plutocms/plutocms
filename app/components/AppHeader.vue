@@ -21,6 +21,12 @@ const sections = computed(() => [
     active: route.path.startsWith('/docs')
   },
   {
+    label: 'Templates',
+    icon: 'i-lucide-layout-template',
+    to: '/templates',
+    active: route.path.startsWith('/templates')
+  },
+  {
     label: 'Layers',
     icon: 'i-lucide-layers',
     to: '/layers',
