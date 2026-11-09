@@ -12,7 +12,7 @@ Small core. Big heart.
 A small CMS with a [big heart]{.text-primary}.
 
 #description
-Pluto is a layerable CMS powered by [Nuxt](https://nuxt.com). Start small, add layers as needed.
+Pluto is a CMS that you build from [Nuxt](https://nuxt.com) layers. Start small, and add layers when you need them.
 
 #links
   :::u-button
@@ -212,7 +212,7 @@ Keep the content in Git, or add a database. The admin is the same.
     to: /docs/build/choose-a-backend
     title: A backend layer
     ---
-    A backend layer gives the database, the sign-in, and the roles. Feature layers add a shop, a blog, and a media library. Supabase is the first backend layer.
+    A backend layer gives the database, the sign-in, and the roles. Feature layers add a shop and a blog. Add-ons add SEO and 3D models. Supabase is the first backend layer.
     ::::
 
   :::
