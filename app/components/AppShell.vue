@@ -27,9 +27,8 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <!-- `pluto-header-offset` is from the docs layer: it moves the header
-       under the Pluto admin bar when the bar shows. -->
-  <AppHeader class="pluto-header-offset" />
+  <!-- A UHeader: Pluto keeps it under the admin bar while the bar shows. -->
+  <AppHeader />
 
   <UMain>
     <slot />
