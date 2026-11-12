@@ -6,7 +6,7 @@ seo:
 
 ::pluto-hero
 #headline
-Small core. Big heart.
+Small core. Big possibilities.
 
 #title
 A small CMS with a [big heart]{.text-primary}.
